@@ -1,0 +1,209 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #0e0e0e;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Glow animation */
+@keyframes glowPulse {
+    0% { text-shadow: 0 0 10px #c28cff, 0 0 20px #c28cff; }
+}
+
+/* Top Panel */
+.panel {
+    background-color: rgba(31, 31, 31, 0.4);
+    padding: 10px 20px;
+    border-radius: 25px;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 430px;
+    height: 45px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    z-index: 10;
+}
+
+.panel-btn {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: glowPulse 100000s ease-in-out infinite;
+}
+
+.panel-btn:hover {
+    text-shadow: 0 0 10px #c28cff, 0 0 20px #c28cff, 0 0 40px #c28cff;
+    transform: scale(1.07);
+}
+
+/* Game Grid */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 120px 40px;
+}
+
+/* Game Card */
+.game-card {
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #c28cff;
+    box-shadow: 0 0 10px rgba(194, 140, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(194, 140, 255, 0.6);
+}
+
+/* Each card has a unique class you can later style individually */
+.game-1 {
+    background-image: url('gameimages/game1.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-2 {
+    background-image: url('gameimages/game2.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-3 {
+    background-image: url('gameimages/game3.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-4 {
+    background-image: url('gameimages/game4.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-5 {
+    background-image: url('gameimages/game5.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-6 {
+    background-image: url('gameimages/game6.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-7 {
+    background-image: url('gameimages/game7.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-8 {
+    background-image: url('gameimages/game8.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-9 {
+    background-image: url('gameimages/game9.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-10 {
+    background-image: url('gameimages/game10.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-11 {
+    background-image: url('gameimages/game11.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-12 {
+    background-image: url('gameimages/game12.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-13 {
+    background-image: url('gameimages/game13.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.game-14 {
+    background-image: url('gameimages/game14.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Gameplay Overlay */
+.gameplay-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14,14,14,0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.gameplay-overlay iframe {
+    width: 90%;
+    height: 80%;
+    border-radius: 15px;
+    border: none;
+}
+
+.overlay-controls {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 200;
+}
+
+.overlay-controls button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1f1f1f;
+    color: #c28cff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.overlay-controls button:hover {
+    box-shadow: 0 0 15px #c28cff;
+}
