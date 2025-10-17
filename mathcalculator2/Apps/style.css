@@ -66,16 +66,15 @@ body, html {
     background-color: #1f1f1f;
     border-radius: 15px;
     height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: #c28cff;
+    width: 150px;       /* optional: make square cards */
     box-shadow: 0 0 10px rgba(194, 140, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    overflow: hidden; /* Ensures images stay inside */
+    overflow: hidden;
+    display: block;      /* remove flex */
+    position: relative;  /* so the img can be absolute */
 }
+
 
 .app-card:hover {
     transform: scale(1.05);
@@ -84,11 +83,18 @@ body, html {
 
 /* App Card Images */
 .app-card img {
-    width: 120%;        /* make it slightly bigger than container */
-    height: 120%;
-    object-fit: cover;   /* fill card and crop edges if necessary */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* fill card entirely */
     border-radius: 15px;
     pointer-events: none;
+}
+
+.app-card {
+    height: 200px;
 }
 
 
@@ -138,6 +144,7 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
+
 
 
 
