@@ -79,6 +79,7 @@ body, html {
 
     /* Zoom inside the card without changing card size */
        /* scale image up */
+    transform: scale(1.3);
     transition: transform 0.3s ease;
 }
 
@@ -133,6 +134,7 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
+
 
 
 
