@@ -16,7 +16,7 @@ body, html {
 
 /* Top Panel */
 .panel {
-    background-color: rgba(31, 31, 31, 0.4); /* Dark panel with 40% opacity */
+    background-color: rgba(31, 31, 31, 0.4);
     padding: 10px 20px;
     border-radius: 25px;
     position: fixed;
@@ -36,28 +36,19 @@ body, html {
     background-color: rgb(31, 31, 31);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 5px 10px;
     border-radius: 15px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
-    /* Smooth transition for scaling & background */
     transition: transform 0.3s ease, background-color 0.3s ease;
-
-    /* Add glowing text animation */
     animation: glowPulse 100000s ease-in-out infinite;
+    height: 100%;
+    box-sizing: border-box;
 }
 
-/* Hover Effect */
 .panel-btn:hover {
     text-shadow: 0 0 10px #c28cff, 0 0 20px #c28cff, 0 0 40px #c28cff;
-    transform: scale(1.07); /* Smooth scale on hover */
-}
-
-.Logo {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #520e79;
-    transform: translateX(3%);
+    transform: scale(1.07);
 }
 
 /* App Grid */
@@ -81,7 +72,7 @@ body, html {
     box-shadow: 0 0 10px rgba(194, 140, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    overflow: hidden; /* Ensures images stay inside card */
+    overflow: hidden; /* Ensures images stay inside */
 }
 
 .app-card:hover {
@@ -91,11 +82,11 @@ body, html {
 
 /* App Card Images */
 .app-card img {
-    width: 100%;           /* Fill the card */
-    height: 100%;          /* Fill the card */
-    object-fit: cover;     /* Crop nicely without stretching */
-    border-radius: 15px;   /* Match card corners */
-    pointer-events: none;  /* Allow clicks on the card */
+    width: 100%;          /* Fill the container */
+    height: 100%;         /* Fill the container */
+    object-fit: contain;  /* Scale to fit without cropping */
+    border-radius: 15px;  /* Match card corners */
+    pointer-events: none; /* Clicks go to card */
 }
 
 /* Gameplay Overlay */
