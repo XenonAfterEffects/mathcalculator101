@@ -83,7 +83,8 @@ body, html {
 }
 
 .app-card:hover img {
-    transform: scale(0.1);   /* optional: extra zoom on hover */
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(194, 140, 255, 0.6);
 }
 
 
@@ -133,6 +134,7 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
+
 
 
 
