@@ -59,6 +59,15 @@ body, html {
     padding: 120px 40px;
 }
 
+/* App Card Images */
+.app-card img {
+    width: 100%;          /* Fill the container */
+    height: 100%;         /* Fill the container */
+    object-fit: contain;  /* Scale to fit without cropping */
+    border-radius: 15px;  /* Match card corners */
+    pointer-events: none; /* Clicks go to card */
+}
+
 /* App Card */
 .app-card {
     background-color: #1f1f1f;
@@ -80,14 +89,7 @@ body, html {
     box-shadow: 0 0 20px rgba(194, 140, 255, 0.6);
 }
 
-/* App Card Images */
-.app-card img {
-    width: 100%;          /* Fill the container */
-    height: 100%;         /* Fill the container */
-    object-fit: contain;  /* Scale to fit without cropping */
-    border-radius: 15px;  /* Match card corners */
-    pointer-events: none; /* Clicks go to card */
-}
+
 
 /* Gameplay Overlay */
 .gameplay-overlay {
@@ -135,3 +137,4 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
+
