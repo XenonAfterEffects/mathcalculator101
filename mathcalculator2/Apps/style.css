@@ -50,7 +50,7 @@ body, html {
 /* Hover Effect */
 .panel-btn:hover {
     text-shadow: 0 0 10px #c28cff, 0 0 20px #c28cff, 0 0 40px #c28cff;
-    transform: scale(1.07); /* <-- Smooth scale on hover */
+    transform: scale(1.07); /* Smooth scale on hover */
 }
 
 .Logo {
@@ -60,7 +60,15 @@ body, html {
     transform: translateX(3%);
 }
 
-/*appgrid */
+/* App Grid */
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 120px 40px;
+}
+
+/* App Card */
 .app-card {
     background-color: #1f1f1f;
     border-radius: 15px;
@@ -73,7 +81,7 @@ body, html {
     box-shadow: 0 0 10px rgba(194, 140, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    overflow: hidden; /* Important so images don’t overflow */
+    overflow: hidden; /* Ensures images stay inside card */
 }
 
 .app-card:hover {
@@ -81,15 +89,16 @@ body, html {
     box-shadow: 0 0 20px rgba(194, 140, 255, 0.6);
 }
 
+/* App Card Images */
 .app-card img {
-    width: 50%;
-    height: 50%;
-    object-fit: cover; /* Makes images fit nicely inside cards */
-    border-radius: 15px; /* Match card radius */
-    pointer-events: none; /* So clicks still register on the card */
+    width: 100%;           /* Fill the card */
+    height: 100%;          /* Fill the card */
+    object-fit: cover;     /* Crop nicely without stretching */
+    border-radius: 15px;   /* Match card corners */
+    pointer-events: none;  /* Allow clicks on the card */
 }
 
-
+/* Gameplay Overlay */
 .gameplay-overlay {
     position: fixed;
     top: 0;
@@ -135,10 +144,3 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
-
-
-
-
-
-
-
