@@ -3,15 +3,13 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #0e0e0e; /* Solid dark background */
+    background-color: #0e0e0e;
     overflow-x: hidden;
 }
 
-/* === GLOW ANIMATION === */
+/* Glow Animation */
 @keyframes glowPulse {
-    0% {
-        text-shadow: 0 0 10px #c28cff, 0 0 20px #c28cff;
-    }
+    0% { text-shadow: 0 0 10px #c28cff, 0 0 20px #c28cff; }
 }
 
 /* Top Panel */
@@ -36,14 +34,12 @@ body, html {
     background-color: rgb(31, 31, 31);
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 10px 20px;
     border-radius: 15px;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
     animation: glowPulse 100000s ease-in-out infinite;
-    height: 100%;
-    box-sizing: border-box;
 }
 
 .panel-btn:hover {
@@ -59,44 +55,35 @@ body, html {
     padding: 120px 40px;
 }
 
-
-
 /* App Card */
 .app-card {
     background-color: #1f1f1f;
     border-radius: 15px;
     height: 150px;
-    width: 150px;       /* optional: make square cards */
+    width: 150px;
     box-shadow: 0 0 10px rgba(194, 140, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     overflow: hidden;
-    display: block;      /* remove flex */
-    position: relative;  /* so the img can be absolute */
+    position: relative; /* for absolute image positioning */
 }
-
 
 .app-card:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(194, 140, 255, 0.6);
 }
 
-/* App Card Images */
+/* App Image — zoomed in to fill more of the card */
 .app-card img {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* fill card entirely */
+    top: -15%;       /* move up to center the zoom */
+    left: -15%;      /* move left to center the zoom */
+    width: 130%;     /* zoom in width */
+    height: 130%;    /* zoom in height */
+    object-fit: cover;
     border-radius: 15px;
     pointer-events: none;
 }
-
-.app-card {
-    height: 200px;
-}
-
 
 /* Gameplay Overlay */
 .gameplay-overlay {
@@ -144,23 +131,3 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
