@@ -65,8 +65,8 @@ body, html {
 .app-card {
     background-color: #1f1f1f;
     border-radius: 15px;
-    height: 150px;
-    width: 150px;       /* optional: make square cards */
+    height: 200px;
+    width: 200px;       /* optional: make square cards */
     box-shadow: 0 0 10px rgba(194, 140, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
@@ -86,8 +86,8 @@ body, html {
     position: absolute;
     top: 0;
     left: 0;
-    width: 160%;
-    height: 160%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;  /* fill card entirely */
     border-radius: 15px;
     pointer-events: none;
@@ -144,6 +144,7 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
+
 
 
 
