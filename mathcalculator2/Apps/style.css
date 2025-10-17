@@ -74,7 +74,7 @@ body, html {
     object-fit: fill;
     border-radius: 15px;
     pointer-events: none;
-    transform: scale(0.5);
+    transform: scale(-2);
     /* Zoom inside the card without changing card size */
        /* scale image up */
     transition: transform 0.3s ease;
@@ -132,6 +132,7 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
+
 
 
 
