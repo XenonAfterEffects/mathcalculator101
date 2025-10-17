@@ -59,15 +59,14 @@ body, html {
     background-color: #1f1f1f;
     border-radius: 15px;
     height: 150px;
-    width: 150px;
-    box-shadow: 0 0 10px rgba(194, 140, 255, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    overflow: hidden;
-    position: relative; /* for absolute image positioning */
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    color: #c28cff;
+    box-shadow: 0 0 10px rgba(194, 140, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .app-card img {
@@ -133,4 +132,5 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
+
 
