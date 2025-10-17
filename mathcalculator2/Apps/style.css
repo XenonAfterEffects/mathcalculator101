@@ -120,3 +120,50 @@ body, html {
     pointer-events: none;
     transform: scale(1.25);
 }
+
+/* Gameplay Overlay */
+.gameplay-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14,14,14,0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.gameplay-overlay iframe {
+    width: 90%;
+    height: 80%;
+    border-radius: 15px;
+    border: none;
+}
+
+.overlay-controls {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 200;
+}
+
+.overlay-controls button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1f1f1f;
+    color: #c28cff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.overlay-controls button:hover {
+    box-shadow: 0 0 15px #c28cff;
+}
