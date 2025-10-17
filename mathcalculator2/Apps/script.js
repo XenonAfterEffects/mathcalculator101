@@ -41,3 +41,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Make openGameplay globally accessible for game cards
     window.openGameplay = openGameplay;
 });
+
+// ===== Panel Button Navigation =====
+document.addEventListener('DOMContentLoaded', () => {
+    const panelButtons = document.querySelectorAll('.panel-btn');
+    panelButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const page = button.dataset.page;
+            window.location.href = `/mathcalculator2/${page}/index.html`;
+        });
+    });
+
+    // Make openGameplay globally accessible
+    window.openGameplay = openGameplay;
+
+    // ===== Dynamically Load App Images =====
+    const appCards = document.querySelectorAll('.app-card');
+    appCards.forEach((card, index) => {
+        const imageNumber = index + 1; // app1.png, app2.png, etc.
+        const imagePath = `appimages/app${imageNumber}.png`;
+        card.style.backgroundImage = `url('${imagePath}')`;
+        card.style.backgroundSize = 'cover';
+        card.style.backgroundPosition = 'center';
+    });
+});
