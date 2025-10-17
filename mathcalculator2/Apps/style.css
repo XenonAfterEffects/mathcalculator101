@@ -90,8 +90,6 @@ body, html {
 
 .app-1 {
     background-image: url('apps/appimages/app1.png');
-    background-size: cover;
-    background-position: center;
 }
 
 .app-2 {
@@ -193,6 +191,7 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
+
 
 
 
