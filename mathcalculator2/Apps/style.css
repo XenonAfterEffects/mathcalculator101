@@ -88,66 +88,6 @@ body, html {
     box-shadow: 0 0 20px rgba(194, 140, 255, 0.6);
 }
 
-.app-1 {
-    background-image: url('apps/appimages/app1.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.app-2 {
-    background-image: url('apps/appimages/app2.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.app-3 {
-    background-image: url('apps/appimages/app3.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.app-4 {
-    background-image: url('apps/appimages/app4.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.app-5 {
-    background-image: url('apps/appimages/app5.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.app-6 {
-    background-image: url('apps/appimages/app6.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.app-7 {
-    background-image: url('apps/appimages/app7.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.app-8 {
-    background-image: url('apps/appimages/app8.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.app-9 {
-    background-image: url('apps/appimages/app9.png');
-    background-size: cover;
-    background-position: center;
-}
-
-.app-10 {
-    background-image: url('apps/appimages/app10.png');
-    background-size: cover;
-    background-position: center;
-}
-
 .gameplay-overlay {
     position: fixed;
     top: 0;
@@ -193,6 +133,7 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
+
 
 
 
