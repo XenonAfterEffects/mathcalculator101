@@ -29,7 +29,6 @@ body, html {
     color: white;
 }
 
-/* Panel Buttons */
 .panel-btn {
     background-color: rgb(31, 31, 31);
     color: white;
@@ -55,101 +54,69 @@ body, html {
     padding: 120px 40px;
 }
 
-/* Game Card */
+/* App Card */
 .app-card {
     background-color: #1f1f1f;
     border-radius: 15px;
     height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: #c28cff;
+    width: 150px;
     box-shadow: 0 0 10px rgba(194, 140, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.app-card img {
-    object-fit: fill;
-    border-radius: 15px;
-    pointer-events: none;
-    transform: scale(-2);
-    /* Zoom inside the card without changing card size */
-       /* scale image up */
-    transition: transform 0.3s ease;
-}
-
-.app-card:hover img {
+.app-card:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(194, 140, 255, 0.6);
 }
 
-
-/* Gameplay Overlay */
-.gameplay-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* Images: individual classes for scaling/positioning */
+.app-img-1 {
     width: 100%;
     height: 100%;
-    background-color: rgba(14,14,14,0.95);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 100;
-}
-
-.gameplay-overlay iframe {
-    width: 90%;
-    height: 80%;
+    object-fit: cover;
     border-radius: 15px;
-    border: none;
+    pointer-events: none;
+    transform: scale(1.3);
 }
 
-.overlay-controls {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    z-index: 200;
+.app-img-2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.2);
 }
 
-.overlay-controls button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 8px;
-    background-color: #1f1f1f;
-    color: #c28cff;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.2s ease;
+.app-img-3 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.25);
 }
 
-.overlay-controls button:hover {
-    box-shadow: 0 0 15px #c28cff;
+.app-img-4 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.2);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.app-img-5 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.25);
+}
