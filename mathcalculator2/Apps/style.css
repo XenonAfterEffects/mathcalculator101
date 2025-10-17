@@ -91,11 +91,11 @@ body, html {
     object-fit: cover;  /* fill card entirely */
     border-radius: 15px;
     pointer-events: none;
-    transform: scale(3);
 }
 
 .app-card {
     height: 200px;
+    transform: scale(3);
 }
 
 
@@ -145,6 +145,7 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
+
 
 
 
