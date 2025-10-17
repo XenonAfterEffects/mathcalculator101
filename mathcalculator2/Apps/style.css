@@ -82,8 +82,8 @@ body, html {
 }
 
 .app-card img {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     object-fit: cover; /* Makes images fit nicely inside cards */
     border-radius: 15px; /* Match card radius */
     pointer-events: none; /* So clicks still register on the card */
@@ -135,6 +135,7 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
+
 
 
 
