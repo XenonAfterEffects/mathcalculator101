@@ -27,22 +27,7 @@ document.getElementById('fullscreenGameplay').addEventListener('click', () => {
     else if (frame.msRequestFullscreen) frame.msRequestFullscreen();
 });
 
-// ===== Panel Button Navigation =====
-document.addEventListener('DOMContentLoaded', () => {
-    const panelButtons = document.querySelectorAll('.panel-btn');
-    panelButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const page = button.dataset.page; // reads "Home", "Games", etc.
-            // Adjust the path to your folder structure
-            window.location.href = `/mathcalculator2/${page}/index.html`;
-        });
-    });
-
-    // Make openGameplay globally accessible for game cards
-    window.openGameplay = openGameplay;
-});
-
-// ===== Panel Button Navigation =====
+// ===== Panel Button Navigation & Dynamic Image Loading =====
 document.addEventListener('DOMContentLoaded', () => {
     const panelButtons = document.querySelectorAll('.panel-btn');
     panelButtons.forEach(button => {
@@ -58,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===== Dynamically Load App Images =====
     const appCards = document.querySelectorAll('.app-card');
     appCards.forEach((card, index) => {
-        const imageNumber = index + 1; // app1.png, app2.png, etc.
+        const imageNumber = index + 1; // 1-based numbering
         const imagePath = `appimages/app${imageNumber}.png`;
         card.style.backgroundImage = `url('${imagePath}')`;
         card.style.backgroundSize = 'cover';
