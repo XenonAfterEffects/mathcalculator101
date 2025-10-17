@@ -61,11 +61,11 @@ body, html {
 
 /* App Card Images */
 .app-card img {
-    width: 100%;          /* Fill the container */
-    height: 100%;         /* Fill the container */
-    object-fit: contain;  /* Scale to fit without cropping */
-    border-radius: 15px;  /* Match card corners */
-    pointer-events: none; /* Clicks go to card */
+    width: 100%;
+    height: 100%;
+    object-fit: fill;   /* Fill container, crop if necessary */
+    border-radius: 15px;
+    pointer-events: none;
 }
 
 /* App Card */
@@ -137,4 +137,5 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
+
 
