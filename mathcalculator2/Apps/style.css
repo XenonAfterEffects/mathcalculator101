@@ -95,55 +95,55 @@ body, html {
 }
 
 .app-2 {
-    background-image: url('appimages/app2.png');
+    background-image: url('apps/appimages/app2.png');
     background-size: cover;
     background-position: center;
 }
 
 .app-3 {
-    background-image: url('appimages/app3.png');
+    background-image: url('apps/appimages/app3.png');
     background-size: cover;
     background-position: center;
 }
 
 .app-4 {
-    background-image: url('appimages/app4.png');
+    background-image: url('apps/appimages/app4.png');
     background-size: cover;
     background-position: center;
 }
 
 .app-5 {
-    background-image: url('appimages/app5.png');
+    background-image: url('apps/appimages/app5.png');
     background-size: cover;
     background-position: center;
 }
 
 .app-6 {
-    background-image: url('appimages/app6.png');
+    background-image: url('apps/appimages/app6.png');
     background-size: cover;
     background-position: center;
 }
 
 .app-7 {
-    background-image: url('appimages/app7.png');
+    background-image: url('apps/appimages/app7.png');
     background-size: cover;
     background-position: center;
 }
 
 .app-8 {
-    background-image: url('appimages/app8.png');
+    background-image: url('apps/appimages/app8.png');
     background-size: cover;
     background-position: center;
 }
 
 .app-9 {
-    background-image: url('appimages/app9.png');
+    background-image: url('apps/appimages/app9.png');
     background-size: cover;
     background-position: center;
 }
 
 .app-10 {
-    background-image: url('appimages/app10.png');
+    background-image: url('apps/appimages/app10.png');
     background-size: cover;
     background-position: center;
 }
@@ -193,5 +193,6 @@ body, html {
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
 }
+
 
 
