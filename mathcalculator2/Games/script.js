@@ -41,3 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Make openGameplay globally accessible for game cards
     window.openGameplay = openGameplay;
 });
+
+function openGameplay(url) {
+    const overlay = document.getElementById('gameplay');
+    const frame = document.getElementById('gameFrame');
+    frame.src = url;
+    overlay.style.display = 'flex';
+}
