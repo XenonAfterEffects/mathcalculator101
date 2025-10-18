@@ -48,118 +48,170 @@ body, html {
     transform: scale(1.07);
 }
 
-/* Game Grid */
-.game-grid {
+.app-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
     padding: 120px 40px;
 }
 
-/* Game Card */
-.game-card {
+/* App Card */
+.app-card {
     background-color: #1f1f1f;
     border-radius: 15px;
     height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: #c28cff;
+    width: 150px;
     box-shadow: 0 0 10px rgba(194, 140, 255, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.game-card:hover {
+.app-card:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(194, 140, 255, 0.6);
 }
 
-/* Each card has a unique class you can later style individually */
-.game-1 {
-    background-image: url('gameimages/game1.png');
-    background-size: cover;
-    background-position: center;
+/* Images: individual classes for scaling/positioning */
+.game-img-1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.3);
 }
 
-.game-2 {
-    background-image: url('gameimages/game2.png');
-    background-size: cover;
-    background-position: center;
+.app-img-2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.2);
 }
 
-.game-3 {
-    background-image: url('gameimages/game3.png');
-    background-size: cover;
-    background-position: center;
+.game-img-3 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.25);
 }
 
-.game-4 {
-    background-image: url('gameimages/game4.png');
-    background-size: cover;
-    background-position: center;
+.game-img-4 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.2);
 }
 
-.game-5 {
-    background-image: url('gameimages/game5.png');
-    background-size: cover;
-    background-position: center;
+.game-img-5 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.25);
 }
 
-.game-6 {
-    background-image: url('gameimages/game6.png');
-    background-size: cover;
-    background-position: center;
+.game-img-6 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.25);
 }
 
-.game-7 {
-    background-image: url('gameimages/game7.png');
-    background-size: cover;
-    background-position: center;
+.game-img-7 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.25);
 }
 
-.game-8 {
-    background-image: url('gameimages/game8.png');
-    background-size: cover;
-    background-position: center;
+.game-img-8 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.25);
 }
 
-.game-9 {
-    background-image: url('gameimages/game9.png');
-    background-size: cover;
-    background-position: center;
+.game-img-9 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.25);
 }
 
-.game-10 {
-    background-image: url('gameimages/game10.png');
-    background-size: cover;
-    background-position: center;
+.game-img-10 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.25);
 }
 
-.game-11 {
-    background-image: url('gameimages/game11.png');
-    background-size: cover;
-    background-position: center;
+.game-img-11 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.25);
 }
 
-.game-12 {
-    background-image: url('gameimages/game12.png');
-    background-size: cover;
-    background-position: center;
+.game-img-12 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.25);
 }
 
-.game-13 {
-    background-image: url('gameimages/game13.png');
-    background-size: cover;
-    background-position: center;
+.game-img-13 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.25);
 }
 
-.game-14 {
-    background-image: url('gameimages/game14.png');
-    background-size: cover;
-    background-position: center;
+.game-img-14 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.25);
 }
+
+.game-img-15 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    pointer-events: none;
+    transform: scale(1.25);
+}
+
 
 /* Gameplay Overlay */
 .gameplay-overlay {
@@ -206,4 +258,5 @@ body, html {
 
 .overlay-controls button:hover {
     box-shadow: 0 0 15px #c28cff;
+
 }
