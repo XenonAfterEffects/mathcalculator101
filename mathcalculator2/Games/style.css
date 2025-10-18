@@ -48,7 +48,7 @@ body, html {
     transform: scale(1.07);
 }
 
-.app-grid {
+.game-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
@@ -260,4 +260,5 @@ body, html {
     box-shadow: 0 0 15px #c28cff;
 
 }
+
 
