@@ -5,7 +5,9 @@ function appendNumber(number) {
 }
 
 function appendOperator(operator) {
-    if (display.value === '' && operator !== '-') return; 
+    if (display.value === '' && operator !== '-') return;
+    const lastChar = display.value.slice(-1);
+    if (['+', '-', 'x', '÷'].includes(lastChar)) return; // prevent double ops
     display.value += operator;
 }
 
@@ -14,14 +16,14 @@ function clearDisplay() {
 }
 
 function calculateResult() {
-    // Secret code check (5879)
     if (display.value === '5879') {
         window.location.href = '../loading/index.html';
         return;
     }
-    
+
+    let expression = display.value.replace(/x/g, '*').replace(/÷/g, '/');
     try {
-        display.value = eval(display.value);
+        display.value = eval(expression);
     } catch {
         display.value = 'Error';
     }
