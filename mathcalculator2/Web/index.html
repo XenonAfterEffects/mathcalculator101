@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebBrowser</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="tabs-bar">
+    <div class="tabs-container" id="tabsContainer">
+        <div class="tab active">Tab 1<span class="close-btn">&times;</span></div>
+    </div>
+    <button class="add-tab-btn" id="addTabBtn">+</button>
+    <button class="settings-btn" id="settingsBtn">⚙️</button>
+</div>
+
+<!-- Settings Popup -->
+<div id="settingsPopup" class="popup-overlay">
+    <div class="popup-content">
+        <h2>Settings</h2>
+        <p>Here you can add your settings controls!</p>
+        <button id="closeSettings">Close</button>
+    </div>
+</div>
+
+
+
+    <!-- === TOP BAR === -->
+    <header class="browser-bar">
+        <div class="nav-buttons">
+            <button class="nav-btn" id="back">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="nav-btn" id="forward">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            <button class="nav-btn" id="refresh">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <polyline points="23 4 23 10 17 10"></polyline>
+                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                </svg>
+            </button>
+            <button class="nav-btn" id="home">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M3 9.5L12 3l9 6.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V9.5z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div class="search-container">
+    <input type="text" id="searchBar" placeholder="Search or enter URL...">
+    <button class="fav-btn" id="favBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+            <polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"></polygon>
+        </svg>
+    </button>
+    <!-- Hamburger Menu -->
+    <button class="menu-btn" id="menuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</div>
+
+<!-- Menu Popup -->
+<div id="menuPopup" class="popup-overlay">
+    <div class="popup-content">
+        <h2>Menu</h2>
+        <p>Add your menu items here</p>
+        <button id="closeMenu">Close</button>
+    </div>
+</div>
+
+    </header>
+
+    
+
+    <!-- === MAIN CONTENT === -->
+    <main class="browser-content">
+        <p style="opacity: 0.5;">(Browser content area)</p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
