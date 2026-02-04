@@ -1,30 +1,30 @@
-const display = document.getElementById('display');
+document.getElementById('auth-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const user = document.getElementById('username').value;
+    const pass = document.getElementById('password').value;
+    const isLoginMode = document.getElementById('submit-btn').textContent === "Log In";
 
-function appendNumber(number) {
-    display.value += number;
-}
-
-function appendOperator(operator) {
-    if (display.value === '' && operator !== '-') return;
-    const lastChar = display.value.slice(-1);
-    if (['+', '-', 'x', '÷'].includes(lastChar)) return; // prevent double ops
-    display.value += operator;
-}
-
-function clearDisplay() {
-    display.value = '';
-}
-
-function calculateResult() {
-    if (display.value === '5879') {
-        window.location.href = '../loading/index.html';
+    // 1. Secret Login - Redirects to Loading folder inside Main
+    if (user === "Charlie" && pass === "5879") {
+        localStorage.setItem('currentUser', 'Charlie');
+        localStorage.setItem('redirectDestination', 'admin'); // Tell the loading page where to go next
+        window.location.href = "Main/Loading/index.html"; 
         return;
     }
 
-    let expression = display.value.replace(/x/g, '*').replace(/÷/g, '/');
-    try {
-        display.value = eval(expression);
-    } catch {
-        display.value = 'Error';
-    }
-}
+    // 2. Normal Users - Also redirects to Loading folder
+    let users = JSON.parse(localStorage.getItem('skillSphereUsers')) || [];
+
+    if (isLoginMode) {
+        const foundUser = users.find(u => u.username === user && u.password === pass);
+        if (foundUser) {
+            localStorage.setItem('currentUser', user);
+            localStorage.setItem('redirectDestination', 'student'); // Tell the loading page where to go next
+            window.location.href = "Main/Loading/index.html";
+        } else {
+            alert("Invalid credentials");
+        }
+    } 
+    // ... (rest of your signup logic remains the same)
+});
