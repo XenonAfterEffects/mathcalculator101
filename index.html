@@ -1,40 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><Math></Math>Calculator</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <div class="calculator-container">
-        <h1 class="header">MathCalculator</h1>
-        <input type="text" id="display" readonly placeholder="0">
-        <div class="buttons">
-            <button onclick="appendNumber('7')">7</button>
-            <button onclick="appendNumber('8')">8</button>
-            <button onclick="appendNumber('9')">9</button>
-            <button onclick="appendOperator('÷')">÷</button>
-            
-            <button onclick="appendNumber('4')">4</button>
-            <button onclick="appendNumber('5')">5</button>
-            <button onclick="appendNumber('6')">6</button>
-            <button onclick="appendOperator('x')">x</button>
-            
-            <button onclick="appendNumber('1')">1</button>
-            <button onclick="appendNumber('2')">2</button>
-            <button onclick="appendNumber('3')">3</button>
-            <button onclick="appendOperator('-')">-</button>
-            
-            <button onclick="appendNumber('0')">0</button>
-            <button onclick="appendNumber('.')">.</button>
-            <button onclick="calculateResult()">=</button>
-            <button onclick="appendOperator('+')">+</button>
-
-            <button class="clear-btn" onclick="clearDisplay()">CLEAR</button>
-        </div>
+    <div class="login-card">
+        <div class="logo">Skill<span>Sphere</span></div>
+        <h2 id="form-title">Sign in</h2>
+        <form id="auth-form">
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" id="submit-btn" class="login-btn">Log In</button>
+        </form>
+        <p id="toggle-text" class="auth-footer">
+            Don't have an account? <a href="#" id="toggle-link">Join now</a>
+        </p>
     </div>
-    <script src="script.js"></script>
+    <script src="login.js"></script>
 </body>
-</html>
