@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSphere | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">Skill<span>Sphere</span></div>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-target="learning-view">
+                    <i class="fa-solid fa-house"></i> <span>Learning</span>
+                </button>
+                <button class="nav-btn" data-target="explorer-view">
+                    <i class="fa-solid fa-compass"></i> <span>Explorer</span>
+                </button>
+                <button class="nav-btn" data-target="analytics-view">
+                    <i class="fa-solid fa-chart-line"></i> <span>Analytics</span>
+                </button>
+                <button class="nav-btn" data-target="awards-view">
+                    <i class="fa-solid fa-trophy"></i> <span>Awards</span>
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="streak-mini">
+                    <i class="fa-solid fa-fire"></i>
+                    <div>
+                        <p class="streak-label">Streak</p>
+                        <p class="streak-count">12 Days</p>
+                    </div>
+                </div>
+                <button onclick="logout()" class="btn-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main-layout">
+            <!-- TOP BAR -->
+            <header class="top-bar">
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="global-search" placeholder="Search for skills, topics, or standards...">
+                </div>
+                <div class="top-actions">
+                    <div class="notification-bell">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="notify-badge">3</span>
+                    </div>
+                    <div class="user-profile-pill">
+                        <div class="avatar-circle" id="user-initial">U</div>
+                        <span id="user-name">Username</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- VIEW: LEARNING (Dashboard) -->
+            <section id="learning-view" class="view-content active">
+                <div class="view-header">
+                    <h1 id="greeting">Good Morning, Student!</h1>
+                    <p>Continue where you left off or explore new recommendations.</p>
+                </div>
+
+                <div class="grade-scroller">
+                    <button class="grade-chip">Pre-K</button>
+                    <button class="grade-chip">K</button>
+                    <button class="grade-chip">1st</button>
+                    <button class="grade-chip">2nd</button>
+                    <button class="grade-chip active">3rd Grade</button>
+                    <button class="grade-chip">4th</button>
+                    <button class="grade-chip">5th</button>
+                    <button class="grade-chip">6th</button>
+                    <button class="grade-chip">7th</button>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Recommendations Section -->
+                    <div class="grid-span-2">
+                        <h2 class="section-title">Personalized Recommendations</h2>
+                        <div class="rec-grid">
+                            <div class="rec-card">
+                                <span class="tag math">MATH</span>
+                                <h3>Multiplying by 5 and 10</h3>
+                                <p>Master basic multiplication tables.</p>
+                                <button class="btn-primary">Keep Practicing</button>
+                            </div>
+                            <div class="rec-card">
+                                <span class="tag ela">ELA</span>
+                                <h3>Common vs Proper Nouns</h3>
+                                <p>Learn the difference in capitalization.</p>
+                                <button class="btn-primary">Start Skill</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Subject Cards -->
+                    <div class="subject-row">
+                        <div class="subject-card math">
+                            <div class="card-head">
+                                <i class="fa-solid fa-calculator"></i>
+                                <h3>Math Lab</h3>
+                            </div>
+                            <div class="skill-list">
+                                <div class="skill-item"><span>A.1</span> Number sense</div>
+                                <div class="skill-item"><span>B.4</span> Addition up to 1000</div>
+                                <div class="skill-item"><span>C.2</span> Intro to Fractions</div>
+                            </div>
+                            <button class="btn-text">View all 312 skills</button>
+                        </div>
+                        <div class="subject-card ela">
+                            <div class="card-head">
+                                <i class="fa-solid fa-book-open"></i>
+                                <h3>Word Forge</h3>
+                            </div>
+                            <div class="skill-list">
+                                <div class="skill-item"><span>E.1</span> Main idea identification</div>
+                                <div class="skill-item"><span>G.3</span> Punctuation basics</div>
+                                <div class="skill-item"><span>L.2</span> Synonyms & Antonyms</div>
+                            </div>
+                            <button class="btn-text">View all 245 skills</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW: EXPLORER -->
+            <section id="explorer-view" class="view-content">
+                <div class="view-header">
+                    <h1>Explorer</h1>
+                    <p>Browse the full curriculum across all grades.</p>
+                </div>
+                <div class="explorer-grid">
+                    <div class="explorer-box">
+                        <h3>National Standards</h3>
+                        <p>Track progress against Common Core.</p>
+                    </div>
+                    <div class="explorer-box">
+                        <h3>Skill Plans</h3>
+                        <p>Follow textbooks or state tests.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW: ANALYTICS -->
+            <section id="analytics-view" class="view-content">
+                <div class="view-header">
+                    <h1>Real-Time Insights</h1>
+                    <p>Monitor your growth and time spent learning.</p>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <p>Questions Answered</p>
+                        <h2 id="stat-questions">1,245</h2>
+                    </div>
+                    <div class="stat-card">
+                        <p>Time Spent</p>
+                        <h2 id="stat-time">14h 22m</h2>
+                    </div>
+                    <div class="stat-card">
+                        <p>Skills Mastered</p>
+                        <h2 id="stat-mastered">48</h2>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3>Weekly Activity</h3>
+                    <div class="mock-chart">
+                        <div class="bar" style="height: 40%"><span>M</span></div>
+                        <div class="bar" style="height: 70%"><span>T</span></div>
+                        <div class="bar" style="height: 90%"><span>W</span></div>
+                        <div class="bar" style="height: 30%"><span>T</span></div>
+                        <div class="bar" style="height: 60%"><span>F</span></div>
+                        <div class="bar" style="height: 10%"><span>S</span></div>
+                        <div class="bar" style="height: 5%"><span>S</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW: AWARDS -->
+            <section id="awards-view" class="view-content">
+                <div class="view-header">
+                    <h1>Awards & Certificates</h1>
+                    <p>Collect stickers and celebrate your achievements.</p>
+                </div>
+                <div class="badge-grid" id="award-container">
+                    <!-- Generated by JS -->
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Modals (Hidden by default) -->
+    <div id="skill-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Skill Details</h2>
+            <p>This is a placeholder for the practice environment.</p>
+            <div class="placeholder-box">
+                Practice logic will be loaded here.
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
