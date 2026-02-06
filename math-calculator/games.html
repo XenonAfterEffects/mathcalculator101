@@ -4,100 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MathCalculator - Games</title>
-    
-    <!-- Link Global CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Link Global Script -->
     <script src="../assets/js/script.js" defer></script>
 </head>
 
 <body class="games-page"> 
     
-    <!-- Top Panel -->
     <div class="panel" id="main-panel">
         <button class="panel-btn" data-page="Home">Home</button>
         <button class="panel-btn" data-page="Games">Games</button>
         <button class="panel-btn" data-page="Apps">Apps</button>
         <button class="panel-btn" data-page="Tv&Movies">Tv/Movies</button>
-
-        <button class="profile-button">
-            <i class="fa-solid fa-user"></i>
-        </button>
-
-        <button class="settings-button">
-            <i class="fa-solid fa-gear"></i>
-        </button>
+        <button class="profile-button"><i class="fa-solid fa-user"></i></button>
+        <button class="settings-button"><i class="fa-solid fa-gear"></i></button>
     </div>
 
-    <!-- Game Grid -->
+    <!-- Game Grid Container -->
     <div class="game-grid" id="game-grid-container">
-        <!-- The script below will automatically fill this with all 816 games -->
+        <!-- Games will be injected here by the script below -->
     </div>
 
-    <!-- Automatic Game Loader Script -->
+    <!-- IMPROVED AUTO-LOADER SCRIPT -->
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
             const grid = document.getElementById('game-grid-container');
-            const totalGames = 815; // The repo goes from 0.html to 815.html
-
-            // We use a document fragment to load everything fast without freezing
+            const totalGames = 815; 
             const fragment = document.createDocumentFragment();
 
             for (let i = 0; i <= totalGames; i++) {
-                // Create the card div
+                const gamePath = `../assets/games/${i}.html`;
+                
+                // 1. Create the Card Container
                 const card = document.createElement('div');
                 card.className = 'game-card';
-                // Set the onclick to open the specific numbered file
-                const gamePath = `../assets/games/${i}.html`;
-                card.setAttribute('onclick', `openGameplay('${gamePath}')`);
+                card.onclick = function() { window.openGameplay(gamePath); };
 
-                // Create the image element
+                // 2. Create the Image
                 const img = document.createElement('img');
-                // You said you'd figure out images later, so we set a default path pattern
                 img.src = `../assets/images/game${i}.png`; 
-                img.alt = `Game ${i}`; // Temporary name while loading
-                
-                // --- THE SMART PART: FETCH REAL NAMES ---
-                // This fetches the HTML file, finds the <title>, and updates the card
+                // Default placeholder if image fails
+                img.onerror = function() { this.src = 'https://via.placeholder.com/150?text=Game'; };
+
+                // 3. Create the Title Text (Loading state)
+                const titleDiv = document.createElement('div');
+                titleDiv.className = 'game-title';
+                titleDiv.textContent = `Game ${i}`; // Default name
+
+                // 4. Append parts to card
+                card.appendChild(img);
+                card.appendChild(titleDiv);
+                fragment.appendChild(card);
+
+                // 5. Fetch the Real Name (Asynchronous)
                 fetch(gamePath)
-                    .then(response => {
-                        if (!response.ok) throw new Error("File not found");
-                        return response.text();
+                    .then(res => {
+                        if (!res.ok) throw new Error('No File');
+                        return res.text();
                     })
                     .then(html => {
-                        // Extract title from the HTML content
-                        const match = html.match(/<title>(.*?)<\/title>/i);
-                        if (match && match[1]) {
-                            const realName = match[1].replace('MathCalculator - ', '').trim();
-                            img.alt = realName;
-                            // Optional: If you want text below the image, uncomment the next line:
-                            // card.innerHTML += `<div style="position:absolute; bottom:5px; width:100%; font-size:12px; font-weight:bold; text-shadow:0 0 4px black;">${realName}</div>`;
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        let title = doc.querySelector('title')?.innerText;
+
+                        if (title) {
+                            // Cleanup name: Remove common prefixes like "MathCalculator - "
+                            title = title.replace('MathCalculator - ', '').replace('Math Calculator - ', '').trim();
+                            
+                            // Update the visible text and the image alt
+                            titleDiv.textContent = title;
+                            img.alt = title;
                         }
                     })
-                    .catch(err => {
-                        // If file doesn't exist or error, keep generic name
-                        console.log(`Skipped game ${i}: ${err.message}`);
+                    .catch(() => {
+                        // If fetch fails, keep "Game [i]" as the name
+                        // console.log(`Could not load title for game ${i}`);
                     });
-
-                // Add default error handler for missing images
-                img.onerror = function() { 
-                    this.src = '../assets/images/placeholder.png'; // Make sure you have a placeholder.png
-                };
-
-                card.appendChild(img);
-                fragment.appendChild(card);
             }
 
-            // Add all cards to the grid at once
             grid.appendChild(fragment);
         });
     </script>
 
-    <!-- Gameplay Overlay -->
     <div id="gameplay" class="gameplay-overlay">
         <div class="overlay-controls">
             <button id="closeGameplay">Close</button>
@@ -105,6 +93,5 @@
         </div>
         <iframe id="gameFrame" src="" frameborder="0"></iframe>
     </div>
-
 </body>
 </html>
