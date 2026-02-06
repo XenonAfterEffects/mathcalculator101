@@ -15,75 +15,73 @@
     <script src="../assets/js/script.js" defer></script>
 </head>
 
-<!-- Make sure the body tag has the correct class for styling -->
 <body class="games-page"> 
     
-    <!-- Top Panel -->
+    <!-- Top Panel (Matches Home Page) -->
     <div class="panel" id="main-panel">
-        <button class="panel-btn" data-page="Home">Home</button>
-        <button class="panel-btn" data-page="Games">Games</button>
-        <button class="panel-btn" data-page="Apps">Apps</button>
-        <button class="panel-btn" data-page="Tv&Movies">Tv/Movies</button>
+        <div class="panel-left">
+            <button class="panel-btn" data-page="Home">Home</button>
+            <button class="panel-btn" data-page="Games">Games</button>
+            <button class="panel-btn" data-page="Apps">Apps</button>
+            <button class="panel-btn" data-page="Tv&Movies">Tv/Movies</button>
+        </div>
 
-        <!-- Profile Button -->
-        <button class="profile-button">
-            <i class="fa-solid fa-user"></i>
-        </button>
-
-        <!-- Settings Button -->
-        <button class="settings-button">
-            <i class="fa-solid fa-gear"></i>
-        </button>
+        <div class="panel-right">
+            <button class="profile-button">
+                <i class="fa-solid fa-user"></i>
+            </button>
+            <button class="settings-button">
+                <i class="fa-solid fa-gear"></i>
+            </button>
+        </div>
     </div>
 
-    <!-- Game Grid -->
+    <!-- Game Grid (Assigned based on your new assets/games folder) -->
     <div class="game-grid">
-        <!-- FIX: Image paths need to go up two levels to reach assets/images -->
-        <div class="game-card game-1" onclick="openGameplay('games/Minecraft1.8.html')">
-            <img src="../assets/images/game1.png" alt="Minecraft 1.8" class="game-img-1">
+        <!-- 1. Minecraft -->
+        <div class="game-card" onclick="openGameplay('../assets/games/minecraft1.8.html')">
+            <img src="../assets/images/game1.png" alt="Minecraft 1.8">
         </div>
-        <div class="game-card game-2" onclick="openGameplay('')">
-            <img src="../assets/images/game2.png" alt="game 2" class="game-img-2">
+
+        <!-- 2. Bad Parenting -->
+        <div class="game-card" onclick="openGameplay('../assets/games/badparenting1.html')">
+            <img src="../assets/images/game2.png" alt="Bad Parenting 1">
         </div>
-        <div class="game-card game-3" onclick="openGameplay('')">
-            <img src="../assets/images/game3.png" alt="game 3" class="game-img-3">
+
+        <!-- 3. Bitlife -->
+        <div class="game-card" onclick="openGameplay('../assets/games/bitlife.html')">
+            <img src="../assets/images/game3.png" alt="BitLife">
         </div>
-        <div class="game-card game-4" onclick="openGameplay('')">
-            <img src="../assets/images/game4.png" alt="game 4" class="game-img-4">
+
+        <!-- 4. Hollow Knight -->
+        <div class="game-card" onclick="openGameplay('../assets/games/hollowknight.html')">
+            <img src="../assets/images/game4.png" alt="Hollow Knight">
         </div>
-        <div class="game-card game-5" onclick="openGameplay('')">
-            <img src="../assets/images/game5.png" alt="game 5" class="game-img-5">
+
+        <!-- 5. Jelly Drift -->
+        <div class="game-card" onclick="openGameplay('../assets/games/jellydrift.html')">
+            <img src="../assets/images/game5.png" alt="Jelly Drift">
         </div>
-        <div class="game-card game-6" onclick="openGameplay('games/BasketRandom.html')">
-            <img src="../assets/images/game6.png" alt="BasketRandom" class="game-img-6">
+
+        <!-- 6. Basket Random -->
+        <div class="game-card" onclick="openGameplay('../assets/games/basketrandom.html')">
+            <img src="../assets/images/game7.png" alt="">
         </div>
-        <div class="game-card game-7" onclick="openGameplay('')">
-            <img src="../assets/images/game7.png" alt="game 7" class="game-img-7">
+
+        <!-- 7. Terraria -->
+        <div class="game-card" onclick="openGameplay('../assets/games/basketrandom.html')">
+            <img src="../assets/images/game7.png" alt="Basket Random">
         </div>
-        <div class="game-card game-8" onclick="openGameplay('games/gdash/index.html')">
-            <img src="../assets/images/game8.png" alt="GeometryDash" class="game-img-8">
-        </div>
-        <div class="game-card game-9" onclick="openGameplay('')">
-            <img src="../assets/images/game9.png" alt="game 9" class="game-img-9">
-        </div>
-        <div class="game-card game-10" onclick="openGameplay('')">
-            <img src="../assets/images/game10.png" alt="game 10" class="game-img-12">
-        </div>
-        <div class="game-card game-11" onclick="openGameplay('games/DriftBoss/index.html')">
-            <img src="../assets/images/game11.png" alt="DriftBoss" class="game-img-11">
-        </div>
-        <div class="game-card game-12" onclick="openGameplay('games/MonkeyMart1-master/i-ndex.html')">
-            <img src="../assets/images/game12.png" alt="MonkeyMart" class="game-img-12">
-        </div>
-        <div class="game-card game-13" onclick="openGameplay('')">
-            <img src="../assets/images/game13.png" alt="game 13" class="game-img-13">
-        </div>
-        <div class="game-card game-14" onclick="openGameplay('games/fanf5/index.html')">
-            <img src="../assets/images/game14.png" alt="Fnaf5" class="game-img-14">
-        </div>
-        <div class="game-card game-15" onclick="openGameplay('games/sonic1/index.html')">
-            <img src="../assets/images/game15.png" alt="game 15" class="game-img-15">
-        </div>
+
+        <!-- Placeholder Slots (8-15) -->
+        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game8.png" alt="Coming Soon"></div>
+        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game9.png" alt="Coming Soon"></div>
+        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game10.png" alt="Coming Soon"></div>
+        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game11.png" alt="Coming Soon"></div>
+        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game12.png" alt="Coming Soon"></div>
+        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game13.png" alt="Coming Soon"></div>
+        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game14.png" alt="Coming Soon"></div>
+        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game15.png" alt="Coming Soon"></div>
     </div>
 
     <!-- Gameplay Overlay -->
