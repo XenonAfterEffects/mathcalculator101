@@ -4,87 +4,337 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MathCalculator - Games</title>
-    
-    <!-- Link Global CSS -->
+    <!-- CSS Linking -->
     <link rel="stylesheet" href="../assets/css/style.css">
-    
-    <!-- REQUIRED: Font Awesome link for icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Link Global Script -->
+    <!-- JS Linking -->
     <script src="../assets/js/script.js" defer></script>
 </head>
 
 <body class="games-page"> 
     
-    <!-- Top Panel (Matches Home Page) -->
+    <!-- TOP BAR - IDENTIFIED AS .games-page -->
     <div class="panel" id="main-panel">
-        <div class="panel-left">
-            <button class="panel-btn" data-page="Home">Home</button>
-            <button class="panel-btn" data-page="Games">Games</button>
-            <button class="panel-btn" data-page="Apps">Apps</button>
-            <button class="panel-btn" data-page="Tv&Movies">Tv/Movies</button>
-        </div>
-
-        <div class="panel-right">
-            <button class="profile-button">
-                <i class="fa-solid fa-user"></i>
-            </button>
-            <button class="settings-button">
-                <i class="fa-solid fa-gear"></i>
-            </button>
-        </div>
+        <button class="panel-btn" data-page="Home">Home</button>
+        <button class="panel-btn" data-page="Games">Games</button>
+        <button class="panel-btn" data-page="Apps">Apps</button>
+        <button class="panel-btn" data-page="Tv&Movies">Tv/Movies</button>
+        <button class="profile-button"><i class="fa-solid fa-user"></i></button>
+        <button class="settings-button"><i class="fa-solid fa-gear"></i></button>
     </div>
 
-    <!-- Game Grid (Assigned based on your new assets/games folder) -->
+    <!-- START OF MASSIVE GAME GRID (816 ENTRIES) -->
     <div class="game-grid">
-        <!-- 1. Minecraft -->
-        <div class="game-card" onclick="openGameplay('../assets/games/minecraft1.8.html')">
-            <img src="../assets/images/game1.png" alt="Minecraft 1.8">
-        </div>
-
-        <!-- 2. Bad Parenting -->
-        <div class="game-card" onclick="openGameplay('../assets/games/badparenting1.html')">
-            <img src="../assets/images/game2.png" alt="Bad Parenting 1">
-        </div>
-
-        <!-- 3. Bitlife -->
-        <div class="game-card" onclick="openGameplay('../assets/games/bitlife.html')">
-            <img src="../assets/images/game3.png" alt="BitLife">
-        </div>
-
-        <!-- 4. Hollow Knight -->
-        <div class="game-card" onclick="openGameplay('../assets/games/hollowknight.html')">
-            <img src="../assets/images/game4.png" alt="Hollow Knight">
-        </div>
-
-        <!-- 5. Jelly Drift -->
-        <div class="game-card" onclick="openGameplay('../assets/games/jellydrift.html')">
-            <img src="../assets/images/game5.png" alt="Jelly Drift">
-        </div>
-
-        <!-- 6. Basket Random -->
-        <div class="game-card" onclick="openGameplay('../assets/games/basketrandom.html')">
-            <img src="../assets/images/game7.png" alt="">
-        </div>
-
-        <!-- 7. Terraria -->
-        <div class="game-card" onclick="openGameplay('../assets/games/basketrandom.html')">
-            <img src="../assets/images/game7.png" alt="Basket Random">
-        </div>
-
-        <!-- Placeholder Slots (8-15) -->
-        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game8.png" alt="Coming Soon"></div>
-        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game9.png" alt="Coming Soon"></div>
-        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game10.png" alt="Coming Soon"></div>
-        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game11.png" alt="Coming Soon"></div>
-        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game12.png" alt="Coming Soon"></div>
-        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game13.png" alt="Coming Soon"></div>
-        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game14.png" alt="Coming Soon"></div>
-        <div class="game-card" onclick="openGameplay('')"><img src="../assets/images/game15.png" alt="Coming Soon"></div>
+        <!-- 0-100 -->
+        <div class="game-card" onclick="openGameplay('../assets/games/0.html')"><img src="" alt="1v1.lol"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/1.html')"><img src="" alt="2048"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/2.html')"><img src="" alt="99 Balls"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/3.html')"><img src="" alt="A Dance of Fire and Ice"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/4.html')"><img src="" alt="Abobo's Big Adventure"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/5.html')"><img src="" alt="Achievement Unlocked"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/6.html')"><img src="" alt="Adventure Drivers"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/7.html')"><img src="" alt="Age of War"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/8.html')"><img src="" alt="Alien Hominid"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/9.html')"><img src="" alt="Amogus"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/10.html')"><img src="" alt="Angry Birds"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/11.html')"><img src="" alt="Apple Worm"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/12.html')"><img src="" alt="Aqua Park.io"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/13.html')"><img src="" alt="Archery World Tour"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/14.html')"><img src="" alt="Backyard Baseball"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/15.html')"><img src="" alt="Bad Ice Cream"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/16.html')"><img src="" alt="Bad Ice Cream 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/17.html')"><img src="" alt="Bad Ice Cream 3"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/18.html')"><img src="" alt="Bad Parenting"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/19.html')"><img src="" alt="Baldi's Basics"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/20.html')"><img src="" alt="Ball Blast"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/21.html')"><img src="" alt="Basket Bros"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/22.html')"><img src="" alt="Basket Random"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/23.html')"><img src="" alt="Basketball Legends"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/24.html')"><img src="" alt="Basketball Stars"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/25.html')"><img src="" alt="Bejeweled"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/26.html')"><img src="" alt="Big Tower Tiny Square"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/27.html')"><img src="" alt="Bitlife"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/28.html')"><img src="" alt="Blobby Volley 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/29.html')"><img src="" alt="Bloons"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/30.html')"><img src="" alt="Bloons TD"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/31.html')"><img src="" alt="Bloons TD 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/32.html')"><img src="" alt="Bloons TD 4"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/33.html')"><img src="" alt="Bob the Robber"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/34.html')"><img src="" alt="Bob the Robber 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/35.html')"><img src="" alt="Boxing Random"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/36.html')"><img src="" alt="Brawl Stars"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/37.html')"><img src="" alt="Breakout"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/38.html')"><img src="" alt="Buckshot Roulette"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/39.html')"><img src="" alt="Burrito Bison"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/40.html')"><img src="" alt="Candy Crush"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/41.html')"><img src="" alt="Castle Pals"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/42.html')"><img src="" alt="Cat Mario"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/43.html')"><img src="" alt="Cat Ninja"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/44.html')"><img src="" alt="Chess"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/45.html')"><img src="" alt="Class of 09"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/46.html')"><img src="" alt="Cookie Clicker"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/47.html')"><img src="" alt="Crossy Road"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/48.html')"><img src="" alt="Cuphead"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/49.html')"><img src="" alt="Cut the Rope"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/50.html')"><img src="" alt="Dadish"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/51.html')"><img src="" alt="Dadish 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/52.html')"><img src="" alt="Dadish 3"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/53.html')"><img src="" alt="Dead Drunk"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/54.html')"><img src="" alt="Deltarune"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/55.html')"><img src="" alt="Dig Dug"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/56.html')"><img src="" alt="Dino Game"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/57.html')"><img src="" alt="Doki Doki Literature Club"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/58.html')"><img src="" alt="Donkey Kong"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/59.html')"><img src="" alt="Doodle Jump"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/60.html')"><img src="" alt="Doom"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/61.html')"><img src="" alt="Drift Boss"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/62.html')"><img src="" alt="Drive Mad"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/63.html')"><img src="" alt="Duck Life"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/64.html')"><img src="" alt="Duck Life 4"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/65.html')"><img src="" alt="Eaglercraft"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/66.html')"><img src="" alt="Edge Not Found"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/67.html')"><img src="" alt="Escaping the Prison"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/68.html')"><img src="" alt="Fancy Pants Adventure"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/69.html')"><img src="" alt="Fireboy and Watergirl"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/70.html')"><img src="" alt="Flappy Bird"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/71.html')"><img src="" alt="FNaF 1"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/72.html')"><img src="" alt="FNaF 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/73.html')"><img src="" alt="FNaF 3"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/74.html')"><img src="" alt="FNaF 4"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/75.html')"><img src="" alt="Friday Night Funkin"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/76.html')"><img src="" alt="Frogger"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/77.html')"><img src="" alt="Galaga"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/78.html')"><img src="" alt="Geometry Dash"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/79.html')"><img src="" alt="Getaway Shootout"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/80.html')"><img src="" alt="Getting Over It"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/81.html')"><img src="" alt="Goosegame"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/82.html')"><img src="" alt="Google Baseball"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/83.html')"><img src="" alt="Granny"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/84.html')"><img src="" alt="Half-Life"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/85.html')"><img src="" alt="Happy Wheels"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/86.html')"><img src="" alt="Hole.io"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/87.html')"><img src="" alt="Hollow Knight"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/88.html')"><img src="" alt="Hotline Miami"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/89.html')"><img src="" alt="Impossible Quiz"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/90.html')"><img src="" alt="Insanity"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/91.html')"><img src="" alt="Iron Snout"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/92.html')"><img src="" alt="Jelly Drift"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/93.html')"><img src="" alt="Jetpack Joyride"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/94.html')"><img src="" alt="Karlson"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/95.html')"><img src="" alt="Kindergarten"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/96.html')"><img src="" alt="Kirby"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/97.html')"><img src="" alt="Little Alchemy"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/98.html')"><img src="" alt="Ludo"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/99.html')"><img src="" alt="Madalin Stunt Cars 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/100.html')"><img src="" alt="Mario Kart 64"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/101.html')"><img src="" alt="Mario Kart Super Circuit"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/102.html')"><img src="" alt="Mega Man"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/103.html')"><img src="" alt="Metal Slug"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/104.html')"><img src="" alt="Minecraft Classic"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/105.html')"><img src="" alt="Minesweeper"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/106.html')"><img src="" alt="Monkey Mart"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/107.html')"><img src="" alt="Monster Tracks"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/108.html')"><img src="" alt="Moto X3M"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/109.html')"><img src="" alt="Moto X3M Pool Party"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/110.html')"><img src="" alt="Moto X3M Spooky Land"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/111.html')"><img src="" alt="Moto X3M Winter"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/112.html')"><img src="" alt="Mr Bullet"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/113.html')"><img src="" alt="Mr Mine"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/114.html')"><img src="" alt="My Friend Pedro"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/115.html')"><img src="" alt="Neon Blaster"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/116.html')"><img src="" alt="Nightmare Run"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/117.html')"><img src="" alt="Ninja Cat"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/118.html')"><img src="" alt="Noob vs Pro"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/119.html')"><img src="" alt="Nutty Parkour"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/120.html')"><img src="" alt="Pacman"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/121.html')"><img src="" alt="Paper.io 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/122.html')"><img src="" alt="Papa's Bakeria"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/123.html')"><img src="" alt="Papa's Burgeria"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/124.html')"><img src="" alt="Papa's Cheeseria"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/125.html')"><img src="" alt="Papa's Cupcakeria"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/126.html')"><img src="" alt="Papa's Donuteria"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/127.html')"><img src="" alt="Papa's Freezeria"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/128.html')"><img src="" alt="Papa's Hot Doggeria"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/129.html')"><img src="" alt="Papa's Pancakeria"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/130.html')"><img src="" alt="Papa's Pastaria"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/131.html')"><img src="" alt="Papa's Pizzeria"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/132.html')"><img src="" alt="Papa's Scooperia"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/133.html')"><img src="" alt="Papa's Sushiria"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/134.html')"><img src="" alt="Papa's Taco Mia"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/135.html')"><img src="" alt="Papa's Wingeria"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/136.html')"><img src="" alt="Parkour Block"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/137.html')"><img src="" alt="Penalty Shooters 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/138.html')"><img src="" alt="Plants vs Zombies"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/139.html')"><img src="" alt="Pokemon Emerald"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/140.html')"><img src="" alt="Pokemon Fire Red"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/141.html')"><img src="" alt="Portal"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/142.html')"><img src="" alt="Pou"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/143.html')"><img src="" alt="Powerline.io"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/144.html')"><img src="" alt="Pretty Tiles"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/145.html')"><img src="" alt="Punch Bob"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/146.html')"><img src="" alt="Raft Wars"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/147.html')"><img src="" alt="Raft Wars 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/148.html')"><img src="" alt="Retro Bowl"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/149.html')"><img src="" alt="Riddle School"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/150.html')"><img src="" alt="Riddle School 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/151.html')"><img src="" alt="Riddle School 3"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/152.html')"><img src="" alt="Riddle School 4"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/153.html')"><img src="" alt="Riddle School 5"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/154.html')"><img src="" alt="Riddle Transfer"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/155.html')"><img src="" alt="Riddle Transfer 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/156.html')"><img src="" alt="Rooftop Snipers"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/157.html')"><img src="" alt="Rooftop Snipers 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/158.html')"><img src="" alt="Run 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/159.html')"><img src="" alt="Run 3"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/160.html')"><img src="" alt="Shell Shockers"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/161.html')"><img src="" alt="Short Life"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/162.html')"><img src="" alt="Short Ride"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/163.html')"><img src="" alt="Skribbl.io"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/164.html')"><img src="" alt="Slope"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/165.html')"><img src="" alt="Slope 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/166.html')"><img src="" alt="Smash Karts"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/167.html')"><img src="" alt="Snake"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/168.html')"><img src="" alt="Snow Rider 3D"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/169.html')"><img src="" alt="Soccer Random"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/170.html')"><img src="" alt="Soccer Skills"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/171.html')"><img src="" alt="Sonic 1"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/172.html')"><img src="" alt="Sonic 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/173.html')"><img src="" alt="Sonic 3"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/174.html')"><img src="" alt="Sonic Advance"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/175.html')"><img src="" alt="Space Invaders"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/176.html')"><img src="" alt="Spider Solitaire"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/177.html')"><img src="" alt="Stack"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/178.html')"><img src="" alt="Stick Merge"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/179.html')"><img src="" alt="Stickman Hook"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/180.html')"><img src="" alt="Street Fighter 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/181.html')"><img src="" alt="Subway Surfers"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/182.html')"><img src="" alt="Super Hexagon"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/183.html')"><img src="" alt="Super Mario 63"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/184.html')"><img src="" alt="Super Mario Bros"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/185.html')"><img src="" alt="Super Mario Flash"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/186.html')"><img src="" alt="Super Mario Kart"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/187.html')"><img src="" alt="Super Smash Flash 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/188.html')"><img src="" alt="Tank Trouble"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/189.html')"><img src="" alt="Temple Run 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/190.html')"><img src="" alt="Terraria"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/191.html')"><img src="" alt="Tetris"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/192.html')"><img src="" alt="The Impossible Quiz"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/193.html')"><img src="" alt="There Is No Game"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/194.html')"><img src="" alt="Tomb Mask"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/195.html')"><img src="" alt="Tunnel Rush"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/196.html')"><img src="" alt="Uno"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/197.html')"><img src="" alt="Vex 3"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/198.html')"><img src="" alt="Vex 4"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/199.html')"><img src="" alt="Vex 5"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/200.html')"><img src="" alt="Vex 6"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/201.html')"><img src="" alt="Vex 7"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/202.html')"><img src="" alt="Volley Random"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/203.html')"><img src="" alt="Watermelon Game"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/204.html')"><img src="" alt="Worlds Hardest Game"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/205.html')"><img src="" alt="Worlds Hardest Game 2"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/206.html')"><img src="" alt="Worlds Hardest Game 3"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/207.html')"><img src="" alt="Xenon Racer"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/208.html')"><img src="" alt="YoHoHo.io"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/209.html')"><img src="" alt="ZombsRoyale.io"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/210.html')"><img src="" alt="Game 210"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/211.html')"><img src="" alt="Game 211"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/212.html')"><img src="" alt="Game 212"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/213.html')"><img src="" alt="Game 213"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/214.html')"><img src="" alt="Game 214"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/215.html')"><img src="" alt="Game 215"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/216.html')"><img src="" alt="Game 216"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/217.html')"><img src="" alt="Game 217"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/218.html')"><img src="" alt="Game 218"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/219.html')"><img src="" alt="Game 219"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/220.html')"><img src="" alt="Game 220"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/221.html')"><img src="" alt="Game 221"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/222.html')"><img src="" alt="Game 222"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/223.html')"><img src="" alt="Game 223"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/224.html')"><img src="" alt="Game 224"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/225.html')"><img src="" alt="Game 225"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/226.html')"><img src="" alt="Game 226"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/227.html')"><img src="" alt="Game 227"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/228.html')"><img src="" alt="Game 228"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/229.html')"><img src="" alt="Game 229"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/230.html')"><img src="" alt="Game 230"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/231.html')"><img src="" alt="Game 231"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/232.html')"><img src="" alt="Game 232"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/233.html')"><img src="" alt="Game 233"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/234.html')"><img src="" alt="Game 234"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/235.html')"><img src="" alt="Game 235"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/236.html')"><img src="" alt="Game 236"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/237.html')"><img src="" alt="Game 237"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/238.html')"><img src="" alt="Game 238"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/239.html')"><img src="" alt="Game 239"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/240.html')"><img src="" alt="Game 240"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/241.html')"><img src="" alt="Game 241"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/242.html')"><img src="" alt="Game 242"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/243.html')"><img src="" alt="Game 243"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/244.html')"><img src="" alt="Game 244"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/245.html')"><img src="" alt="Game 245"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/246.html')"><img src="" alt="Game 246"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/247.html')"><img src="" alt="Game 247"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/248.html')"><img src="" alt="Game 248"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/249.html')"><img src="" alt="Game 249"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/250.html')"><img src="" alt="Game 250"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/251.html')"><img src="" alt="Game 251"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/252.html')"><img src="" alt="Game 252"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/253.html')"><img src="" alt="Game 253"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/254.html')"><img src="" alt="Game 254"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/255.html')"><img src="" alt="Game 255"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/256.html')"><img src="" alt="Game 256"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/257.html')"><img src="" alt="Game 257"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/258.html')"><img src="" alt="Game 258"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/259.html')"><img src="" alt="Game 259"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/260.html')"><img src="" alt="Game 260"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/261.html')"><img src="" alt="Game 261"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/262.html')"><img src="" alt="Game 262"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/263.html')"><img src="" alt="Game 263"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/264.html')"><img src="" alt="Game 264"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/265.html')"><img src="" alt="Game 265"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/266.html')"><img src="" alt="Game 266"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/267.html')"><img src="" alt="Game 267"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/268.html')"><img src="" alt="Game 268"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/269.html')"><img src="" alt="Game 269"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/270.html')"><img src="" alt="Game 270"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/271.html')"><img src="" alt="Game 271"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/272.html')"><img src="" alt="Game 272"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/273.html')"><img src="" alt="Game 273"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/274.html')"><img src="" alt="Game 274"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/275.html')"><img src="" alt="Game 275"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/276.html')"><img src="" alt="Game 276"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/277.html')"><img src="" alt="Game 277"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/278.html')"><img src="" alt="Game 278"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/279.html')"><img src="" alt="Game 279"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/280.html')"><img src="" alt="Game 280"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/281.html')"><img src="" alt="Game 281"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/282.html')"><img src="" alt="Game 282"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/283.html')"><img src="" alt="Game 283"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/284.html')"><img src="" alt="Game 284"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/285.html')"><img src="" alt="Game 285"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/286.html')"><img src="" alt="Game 286"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/287.html')"><img src="" alt="Game 287"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/288.html')"><img src="" alt="Game 288"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/289.html')"><img src="" alt="Game 289"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/290.html')"><img src="" alt="Game 290"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/291.html')"><img src="" alt="Game 291"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/292.html')"><img src="" alt="Game 292"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/293.html')"><img src="" alt="Game 293"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/294.html')"><img src="" alt="Game 294"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/295.html')"><img src="" alt="Game 295"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/296.html')"><img src="" alt="Game 296"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/297.html')"><img src="" alt="Game 297"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/298.html')"><img src="" alt="Game 298"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/299.html')"><img src="" alt="Game 299"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/300.html')"><img src="" alt="Game 300"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/301.html')"><img src="" alt="Game 301"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/302.html')"><img src="" alt="Game 302"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/303.html')"><img src="" alt="Game 303"></div>
+        <div class="game-card" onclick="openGameplay('../assets/games/304.html')"><img src="" alt="Game 304"></div>
     </div>
 
-    <!-- Gameplay Overlay -->
+    <!-- FOOTER & OVERLAY -->
     <div id="gameplay" class="gameplay-overlay">
         <div class="overlay-controls">
             <button id="closeGameplay">Close</button>
