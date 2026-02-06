@@ -57,7 +57,7 @@ if (canvas) {
                     localStorage.removeItem('redirectDestination');
                     window.location.href = "../skillsphere/index.html";
                 } else {
-                    window.location.href = "../math-calculator/index.html";
+                    window.location.href = "../math-calculator/home.html";
                 }
             }, 1800);
         }
