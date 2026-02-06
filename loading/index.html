@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+  
+  <!-- Point to the assets folder (Go up one level with ../) -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<!-- Use the loading-page class for the black background -->
+<body class="loading-page">
+  
+  <!-- Animated gradient background -->
+  <div class="loader-overlay"></div>
+
+  <!-- Main loader content -->
+  <div class="loader-container" id="loader">
+    
+    <!-- I REMOVED THE "BALL THING" (Swirl/Core) FROM HERE -->
+
+    <h1 class="load-text">Loading <span>MathCalculator</span>...</h1>
+    
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+  </div>
+
+  <!-- Subtle particles in background -->
+  <canvas id="particles"></canvas>
+  
+  <!-- Point to the global script -->
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

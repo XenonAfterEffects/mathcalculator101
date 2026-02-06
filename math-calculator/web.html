@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathCalculator - Browser</title>
+    
+    <!-- Link Global CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Link Global Script -->
+    <script src="../assets/js/script.js" defer></script>
+</head>
+
+<!-- Use the home-page class for consistent styling, or create a new .browser-page class -->
+<body class="home-page"> 
+
+    <!-- Top Panel (Optional - can be removed if not needed on browser page) -->
+    <!-- If you want the panel to appear, keep it. If not, remove this div. -->
+    <div class="panel">
+        <button class="panel-btn" data-page="Home">Home</button>
+        <button class="panel-btn" data-page="Games">Games</button>
+        <button class="panel-btn" data-page="Apps">Apps</button>
+        <button class="panel-btn" data-page="Tv&Movies">Tv/Movies</button>
+    </div>
+
+    <!-- Browser Window -->
+    <div class="browser-window">
+        <div class="address-bar">
+            <!-- Navigation Buttons -->
+            <button class="nav-icon back-button"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="nav-icon forward-button"><i class="fa-solid fa-arrow-right"></i></button>
+            <button class="nav-icon reload-button"><i class="fa-solid fa-rotate-right"></i></button>
+            
+            <!-- URL Input -->
+            <div class="url-input-wrapper">
+                <input type="text" id="browser-url" placeholder="Enter URL...">
+            </div>
+            
+            <!-- Optional: Favicon area -->
+            <div class="favicon"></div>
+        </div>
+        
+        <!-- Tab Bar (Basic Structure) -->
+        <div class="tab-bar">
+            <button class="tab active" data-url="https://example.com">Example.com</button>
+            <button class="tab">+</button> <!-- New Tab Button -->
+        </div>
+
+        <!-- Content Area -->
+        <div class="content-area">
+            <iframe id="browser-frame" src="" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-downloads allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-pointer-lock allow-presentation allow-top-navigation allow-top-navigation-by-user-activation"></iframe>
+        </div>
+    </div>
+
+</body>
+</html>
