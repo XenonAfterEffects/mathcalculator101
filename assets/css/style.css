@@ -36,12 +36,12 @@
     --nav-pill: #1e293b;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; transition: background 0.3s, color 0.3s; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', 'Poppins', sans-serif; transition: background 0.3s, color 0.3s; }
 
 /* ============================================================
    2. LOGIN PAGE (DEFAULT STYLES)
    ============================================================ */
-body {
+body { /* This default applies to the root index.html (Login) */
     background: var(--bg-gradient);
     height: 100vh;
     display: flex;
@@ -243,8 +243,9 @@ body.skills-page {
 .skills-page input:checked + .slider:before { transform: translateX(24px); }
 
 /* ============================================================
-   5. MATH CALCULATOR HOME (Updated with Profile Button)
+   5. MATH CALCULATOR HOME (Including Game Page Styles)
    ============================================================ */
+/* Body styles for the Math Calculator Home Page */
 body.home-page {
     height: 100vh;
     font-family: 'Poppins', Arial, sans-serif;
@@ -258,7 +259,7 @@ body.home-page {
     padding: 0;
 }
 
-/* The Panel Container */
+/* Panel Styles for Math Calculator Home */
 .home-page .panel {
     backdrop-filter: blur(14px) saturate(180%);
     background: rgba(31, 31, 31, 0.45);
@@ -267,10 +268,10 @@ body.home-page {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    width: 650px; /* Increased width to fit the new button */
+    width: 650px; /* Increased width to fit buttons */
     height: 60px;
     display: flex;
-    justify-content: space-around; /* Distributes buttons evenly */
+    justify-content: space-between; /* Distributes items */
     align-items: center;
     box-shadow: 0 4px 20px rgba(0,0,0,0.35);
     border: 1px solid rgba(255,255,255,0.08);
@@ -291,76 +292,62 @@ body.home-page {
     100% { top: 25px; opacity: 1; }
 }
 
-/* Panel Button Styles */
-.home-page .panel-btn {
+/* Panel Button Base Style (Shared) */
+.home-page .panel-btn,
+.home-page .profile-button,
+.home-page .settings-button {
     background: linear-gradient(135deg, rgba(49, 49, 49, 0.7), rgba(32, 32, 32, 0.4));
-    color: #fff; border: none; padding: 10px 25px; border-radius: 12px;
-    font-size: 15px; font-weight: 500; cursor: pointer; transition: all 0.25s ease;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 0 0 rgba(255,255,255,0);
 }
 
+/* Navigation Buttons Style */
+.home-page .panel-btn {
+    padding: 10px 25px;
+    border-radius: 12px;
+}
+
+/* HOVER for Navigation Buttons */
 .home-page .panel-btn:hover {
     transform: scale(1.08) translateY(-1px);
-    background: linear-gradient(135deg, rgba(54, 54, 54, 0.7), rgba(32, 32, 32, 0.4));
-    /*box-shadow: 0 0 10px rgba(70,70,70,0.4), 0 0 20px rgba(70,70,70,0.15);*/
+    background: linear-gradient(135deg, rgba(70,70,70,0.85), rgba(40,40,40,0.6));
+    box-shadow: 0 0 8px rgba(255,255,255,0.3), 0 0 15px rgba(255,255,255,0.2);
 }
 
-/* NEW: PROFILE BUTTON STYLES */
+/* Profile Button Style */
 .home-page .profile-button {
-    background: linear-gradient(135deg, rgba(49, 49, 49, 0.7), rgba(32, 32, 32, 0.4));
-    color: white;
-    border: none;
-    width: 40px; /* Small circle */
-    height: 40px;
-    border-radius: 50%; /* Makes it round */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-left: 10px; /* Space from the last button */
+    width: 40px; height: 40px; border-radius: 50%; font-size: 18px;
+    margin-left: 10px;
 }
 
 .home-page .profile-button:hover {
-    background: linear-gradient(135deg, rgba(49, 49, 49, 0.7), rgba(32, 32, 32, 0.4));
+    background: linear-gradient(135deg, rgba(70,70,70,0.85), rgba(40,40,40,0.6));
     transform: scale(1.1);
-    /*box-shadow: 0 4px 12px rgba(73, 73, 73, 0.3);*/
+    box-shadow: 0 0 12px rgba(255,255,255,0.4), 0 0 25px rgba(255,255,255,0.25);
 }
 
-/* NEW: SETTINGS BUTTON STYLES (Similar to profile button) */
+/* Settings Button Style */
 .home-page .settings-button {
-    background: linear-gradient(135deg, rgba(49, 49, 49, 0.7), rgba(32, 32, 32, 0.4));
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    width: 40px; height: 40px; border-radius: 50%; font-size: 18px;
 }
 
 .home-page .settings-button:hover {
-    background: linear-gradient(135deg, rgba(54, 54, 54, 0.7), rgba(32, 32, 32, 0.4));
+    background: linear-gradient(135deg, rgba(70,70,70,0.85), rgba(40,40,40,0.6));
     transform: scale(1.1);
-    /*box-shadow: 0 4px 12px rgba(73, 73, 73, 0.3);*/
+    box-shadow: 0 0 12px rgba(255,255,255,0.4), 0 0 25px rgba(255,255,255,0.25);
 }
 
-/* --- NEW: Browser Search Bar --- */
+/* --- Browser Search Bar --- */
 .home-page .browser-search-container {
-    position: absolute; /* Position it relative to the body */
-    bottom: 30px; /* Or wherever you want it */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 50; /* Ensure it's above the panel */
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    
+    position: absolute;
+    bottom: 30px; left: 50%; transform: translateX(-50%);
+    z-index: 50;
+    display: flex; align-items: center; gap: 10px;
     background: rgba(31, 31, 31, 0.8);
     backdrop-filter: blur(10px);
     padding: 10px 20px;
@@ -375,11 +362,11 @@ body.home-page {
     color: #eee;
     font-size: 15px;
     outline: none;
-    width: 300px; /* Adjust as needed */
+    width: 300px;
 }
 
 .home-page .browser-search-container button {
-    background: var(--primary); /* Use primary color */
+    background: var(--primary);
     color: white;
     border: none;
     padding: 8px 18px;
@@ -393,3 +380,191 @@ body.home-page {
     background: var(--primary-hover);
     transform: scale(1.05);
 }
+
+/* --- GAME PAGE SPECIFIC STYLES --- */
+/* These styles are scoped to apply ONLY when the body has the 'home-page' class,
+   AND the elements match these selectors. This is what we need to change. */
+
+/* Use a NEW class name for Game Page specific styles */
+
+
+body.games-page {
+    height: 100vh;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: radial-gradient(circle at top, #121212, #0a0a0a);
+    color: #fff;
+    overflow-y: auto; /* Allow scrolling for games */
+    display: block;   /* FIX: Changes from flex to block so the grid works */
+    margin: 0;
+    padding: 0;
+}
+
+/* --- EXACT HOME PAGE PANEL REPLICA --- */
+.games-page .panel {
+    backdrop-filter: blur(14px) saturate(180%);
+    background: rgba(31, 31, 31, 0.45);
+    padding: 12px 25px;
+    border-radius: 20px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 650px; /* Increased width to fit buttons */
+    height: 60px;
+    display: flex;
+    justify-content: space-between; /* Distributes items */
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,255,255,0.08);
+    
+    animation: panelDrop 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    transition: top 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 100;
+}
+
+/* RETRACTED STATE FOR PANEL (if you re-add the toggle later) */
+.games-page .panel.retracted {
+    top: -55px !important;
+}
+
+/* KEYFRAMES FOR PANEL ANIMATION */
+@keyframes panelDrop {
+    0% { top: -100px; opacity: 0; }
+    100% { top: 25px; opacity: 1; }
+}
+
+/* Panel Button Base Style (Shared) */
+.games-page .panel-btn,
+.games-page .profile-button,
+.games-page .settings-button {
+    background: linear-gradient(135deg, rgba(49, 49, 49, 0.7), rgba(32, 32, 32, 0.4));
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 0 0 rgba(255,255,255,0);
+}
+
+/* Navigation Buttons Style */
+.games-page .panel-btn {
+    padding: 10px 25px;
+    border-radius: 12px;
+}
+
+/* HOVER for Navigation Buttons */
+.games-page .panel-btn:hover {
+    transform: scale(1.08) translateY(-1px);
+    background: linear-gradient(135deg, rgba(70,70,70,0.85), rgba(40,40,40,0.6));
+    box-shadow: 0 0 8px rgba(255,255,255,0.3), 0 0 15px rgba(255,255,255,0.2);
+}
+
+/* Profile Button Style */
+.games-page .profile-button {
+    width: 40px; height: 40px; border-radius: 50%; font-size: 18px;
+    margin-left: 10px;
+}
+
+.games-page .profile-button:hover {
+    background: linear-gradient(135deg, rgba(70,70,70,0.85), rgba(40,40,40,0.6));
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(255,255,255,0.4), 0 0 25px rgba(255,255,255,0.25);
+}
+
+/* Settings Button Style */
+.games-page .settings-button {
+    width: 40px; height: 40px; border-radius: 50%; font-size: 18px;
+}
+
+.games-page .settings-button:hover {
+    background: linear-gradient(135deg, rgba(70,70,70,0.85), rgba(40,40,40,0.6));
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(255,255,255,0.4), 0 0 25px rgba(255,255,255,0.25);
+}
+
+.games-page .game-grid { /* Changed from .home-page .game-grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Responsive columns */
+    gap: 25px; /* Slightly more gap */
+    padding: 120px 40px; /* Top padding to clear the panel */
+    width: 100%;
+    max-width: 1200px; /* Optional: Limit max grid width */
+    margin: 0 auto; /* Center the grid */
+}
+
+.games-page .game-card { /* Changed from .home-page .game-card */
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    height: 180px;
+    width: 100%; /* Make card fill grid cell width */
+    box-shadow: 0 0 10px rgba(184, 107, 255, 0.2); /* Subtle purple glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.games-page .game-card:hover { /* Changed from .home-page .game-card:hover */
+    transform: scale(1.05) translateY(-2px); /* Slight lift and scale */
+    background: linear-gradient(135deg, rgba(54, 54, 54, 0.8), rgba(32, 32, 32, 0.6)); /* Darker gradient on hover */
+    box-shadow: 0 0 12px rgba(184, 107, 255, 0.5), 0 0 25px rgba(184, 107, 255, 0.3); /* Adjusted hover glow */
+}
+
+.games-page .game-card img { /* Changed from .home-page .game-card img */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Covers the card area without distortion */
+    border-radius: 15px; /* Match card border radius */
+    pointer-events: none; /* Prevent image from interfering with card click */
+}
+
+.games-page .gameplay-overlay { /* Changed from .home-page .gameplay-overlay */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14,14,14,0.95);
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.games-page .gameplay-overlay iframe { /* Changed from .home-page .gameplay-overlay iframe */
+    width: 90%;
+    height: 80%;
+    border-radius: 15px;
+    border: none;
+}
+
+.games-page .overlay-controls { /* Changed from .home-page .overlay-controls */
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 200;
+}
+
+.games-page .overlay-controls button { /* Changed from .home-page .overlay-controls button */
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(49, 49, 49, 0.7), rgba(32, 32, 32, 0.4));
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.games-page .overlay-controls button:hover { /* Changed from .home-page .overlay-controls button:hover */
+    box-shadow: 0 0 16px #bbbbbb; /* Subtle glow on controls */
+}
+
