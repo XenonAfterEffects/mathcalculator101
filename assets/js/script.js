@@ -5,7 +5,6 @@ const canvas = document.getElementById("particles");
 if (canvas) {
     const ctx = canvas.getContext("2d");
     let particles = [];
-
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -22,42 +21,35 @@ if (canvas) {
             this.speedY = Math.random() * 0.6 - 0.3;
         }
         update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
+            this.x += this.speedX; this.y += this.speedY;
             if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
             if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
         }
         draw() {
             ctx.fillStyle = "rgba(255,255,255,0.12)";
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
+            ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
         }
     }
-
     for (let i = 0; i < 70; i++) particles.push(new Particle());
-
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        for (let p of particles) {
-            p.update();
-            p.draw();
-        }
+        for (let p of particles) { p.update(); p.draw(); }
         requestAnimationFrame(animate);
     }
     animate();
 
+    // REDIRECT LOGIC FOR LOADING SCREEN
     setTimeout(() => {
         const loader = document.getElementById('loader');
         if (loader) {
             loader.classList.add('fade-out');
             setTimeout(() => {
-                const destination = localStorage.getItem('redirectDestination');
-                if (destination === 'admin') {
+                const dest = localStorage.getItem('redirectDestination');
+                if (dest === 'math') {
                     localStorage.removeItem('redirectDestination');
-                    window.location.href = "../skillsphere/index.html";
+                    window.location.href = "../math-calculator/home.html";
                 } else {
-                    window.location.href = "../math-calculator/index.html";
+                    window.location.href = "../skillsphere/index.html";
                 }
             }, 1800);
         }
@@ -65,11 +57,73 @@ if (canvas) {
 }
 
 /* ============================================================
+   2. LOGIN PAGE LOGIC (FIXED - MOVED OUTSIDE DASHBOARD CHECK)
+   ============================================================ */
+const authForm = document.getElementById('auth-form');
+if (authForm) {
+    authForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevents the glitch/page reload
+        
+        const user = document.getElementById('username').value;
+        const pass = document.getElementById('password').value;
+        const btnText = document.getElementById('submit-btn').textContent;
+
+        // 1. Charlie Secret Login -> Loading -> Math Calc
+        if (user === "Charlie" && pass === "5879") {
+            localStorage.setItem('currentUser', 'Charlie');
+            localStorage.setItem('redirectDestination', 'math');
+            window.location.href = "loading/index.html";
+            return;
+        }
+
+        // 2. Normal Login/Signup logic
+        let users = JSON.parse(localStorage.getItem('skillSphereUsers')) || [];
+
+        if (btnText === "Log In") {
+            const found = users.find(u => u.username === user && u.password === pass);
+            if (found) {
+                localStorage.setItem('currentUser', user);
+                window.location.href = "skillsphere/index.html";
+            } else {
+                alert("Invalid Credentials");
+            }
+        } else {
+            // Sign up
+            if (users.some(u => u.username === user)) {
+                alert("Username Taken");
+            } else {
+                users.push({ username: user, password: pass });
+                localStorage.setItem('skillSphereUsers', JSON.stringify(users));
+                alert("Account Created! Now log in.");
+                location.reload();
+            }
+        }
+    });
+
+    // Toggle Login/Signup
+    const toggleLink = document.getElementById('toggle-link');
+    if (toggleLink) {
+        toggleLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            const title = document.getElementById('form-title');
+            if (btn.textContent === "Log In") {
+                title.textContent = "Create Account";
+                btn.textContent = "Join SkillSphere";
+            } else {
+                title.textContent = "Sign in";
+                btn.textContent = "Log In";
+            }
+        });
+    }
+}
+
+/* ============================================================
    2. MATH CALCULATOR HOME & BROWSER PAGE SCRIPT
    ============================================================ */
 // Navigation Helper
 function navigateTo(page) {
-    window.location.href = `${page}/home.html`;
+    window.location.href = `${page}/index.html`;
 }
 
 // --- Math Calculator Home Page Logic ---
