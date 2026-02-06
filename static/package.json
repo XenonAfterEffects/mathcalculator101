@@ -1,0 +1,33 @@
+{
+	"name": "uv-app",
+	"version": "1.0.0",
+	"description": "Ultraviolet instance",
+	"type": "module",
+	"engines": {
+		"node": ">=24.0.0"
+	},
+	"scripts": {
+		"start": "node src/index.js",
+		"format": "prettier --write .",
+		"lint": "eslint ./src/",
+		"lint:fix": "eslint ./src/ --fix"
+	},
+	"keywords": [
+		"proxy"
+	],
+	"packageManager": "pnpm@10.28.0",
+	"author": "",
+	"license": "GPL-3.0-or-later",
+	"devDependencies": {
+		"eslint": "^9.39.2",
+		"prettier": "^3.8.1"
+	},
+	"dependencies": {
+		"@mercuryworkshop/bare-mux": "^2.1.8",
+		"@mercuryworkshop/epoxy-transport": "2.1.28",
+		"@titaniumnetwork-dev/ultraviolet": "^3.2.10",
+		"express": "^5.2.1",
+		"wisp-server-node": "1.1.7",
+		"ws": "^8.19.0"
+	}
+}

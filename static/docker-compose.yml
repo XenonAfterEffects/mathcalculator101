@@ -1,0 +1,12 @@
+services:
+  ultraviolet:
+    ports:
+      - 8080:8080
+    build:
+      context: .
+    container_name: ultraviolet
+    restart: unless-stopped
+
+networks:
+  default:
+    name: ultraviolet
