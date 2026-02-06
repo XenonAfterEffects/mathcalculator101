@@ -57,7 +57,7 @@ if (canvas) {
                     localStorage.removeItem('redirectDestination');
                     window.location.href = "../skillsphere/index.html";
                 } else {
-                    window.location.href = "../math-calculator/home.html";
+                    window.location.href = "../math-calculator/index.html";
                 }
             }, 1800);
         }
@@ -69,10 +69,10 @@ if (canvas) {
    ============================================================ */
 // Navigation Helper
 function navigateTo(page) {
-    window.location.href = `${page}/home.html`;
+    window.location.href = `${page}/index.html`;
 }
 
-// --- Logic for the Math Calculator Home Page ---
+// --- Math Calculator Home Page Logic ---
 const mathPanelButtons = document.querySelectorAll('.panel-btn');
 if (mathPanelButtons.length > 0) { // Check if we're on the Math Calculator page
     mathPanelButtons.forEach(button => {
@@ -115,9 +115,8 @@ const browserFrame = document.getElementById('browser-frame');
 const goButton = document.getElementById('go-button');
 const tabBar = document.querySelector('.tab-bar');
 
-// Ensure we only run this if the browser elements exist (i.e., on the browser page)
 if (browserUrlInput && browserFrame && goButton && tabBar) { 
-    const proxyBaseUrl = '/proxy'; // Make sure this matches your UV-App proxy route
+    const proxyBaseUrl = '/proxy'; 
 
     const loadUrl = (urlToLoad, addToHistory = true) => {
         if (!urlToLoad) return;
@@ -127,7 +126,6 @@ if (browserUrlInput && browserFrame && goButton && tabBar) {
             if (finalUrl.includes('.')) { 
                 finalUrl = 'https://' + finalUrl;
             } else {
-                // Fallback to Google search if it's not a valid URL format
                 window.open(`https://www.google.com/search?q=${encodeURIComponent(finalUrl)}`, '_blank');
                 return;
             }
@@ -135,22 +133,20 @@ if (browserUrlInput && browserFrame && goButton && tabBar) {
 
         const proxiedUrl = `${proxyBaseUrl}?url=${encodeURIComponent(finalUrl)}`;
         browserFrame.src = proxiedUrl;
-        browserUrlInput.value = finalUrl; // Update the address bar input
+        browserUrlInput.value = finalUrl; 
     };
 
-    // Event Listener for Enter key in URL input
     browserUrlInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             loadUrl(browserUrlInput.value);
         }
     });
 
-    // Event Listener for the "Go" button
     goButton.addEventListener('click', () => {
         loadUrl(browserUrlInput.value);
     });
 
-    // --- Navigation Buttons (Placeholders) ---
+    // Navigation Buttons (Placeholders)
     const navBackButton = document.querySelector('.back-button');
     const navForwardButton = document.querySelector('.forward-button');
     const navReloadButton = document.querySelector('.reload-button');
@@ -159,7 +155,7 @@ if (browserUrlInput && browserFrame && goButton && tabBar) {
     if (navForwardButton) navForwardButton.addEventListener('click', () => alert('Forward button clicked!'));
     if (navReloadButton) navReloadButton.addEventListener('click', () => browserFrame.src = browserFrame.src);
 
-    // --- Tab Management ---
+    // Tab Management
     const initialTabUrl = document.querySelector('.tab.active')?.dataset.url || 'https://example.com'; 
     loadUrl(initialTabUrl);
 
@@ -282,4 +278,36 @@ if (document.querySelector('.app-container')) {
 function logout() {
     localStorage.removeItem('currentUser');
     window.location.href = '../index.html';
+}
+
+// --- Game-Specific Logic (NOW GLOBAL) ---
+// Declare these variables in the global scope so they can be accessed by onclick in HTML
+const gameplayOverlay = document.getElementById('gameplay');
+const gameFrame = document.getElementById('gameFrame');
+
+// Check if game elements exist before defining functions and listeners
+if (gameplayOverlay && gameFrame) {
+    // Make openGameplay globally accessible so onclick in HTML can use it
+    window.openGameplay = function(url) {
+        gameFrame.src = url; // Corrected from 'frame.src' to 'gameFrame.src'
+        gameplayOverlay.style.display = 'flex';
+    };
+
+    const closeGameplayButton = document.getElementById('closeGameplay');
+    const fullscreenGameplayButton = document.getElementById('fullscreenGameplay');
+
+    if (closeGameplayButton) {
+        closeGameplayButton.addEventListener('click', () => {
+            gameplayOverlay.style.display = 'none';
+            gameFrame.src = ''; // Clear the iframe source
+        });
+    }
+
+    if (fullscreenGameplayButton) {
+        fullscreenGameplayButton.addEventListener('click', () => {
+            if (gameFrame.requestFullscreen) gameFrame.requestFullscreen();
+            else if (gameFrame.webkitRequestFullscreen) gameFrame.webkitRequestFullscreen();
+            else if (gameFrame.msRequestFullscreen) gameFrame.msRequestFullscreen();
+        });
+    }
 }
