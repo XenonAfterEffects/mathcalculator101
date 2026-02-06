@@ -69,7 +69,7 @@ if (canvas) {
    ============================================================ */
 // Navigation Helper
 function navigateTo(page) {
-    window.location.href = `${page}/index.html`;
+    window.location.href = `${page}/home.html`;
 }
 
 // --- Logic for the Math Calculator Home Page ---
