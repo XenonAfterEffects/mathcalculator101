@@ -1,6 +1,5 @@
 /* ============================================================
    1. LOADING SCREEN SCRIPT
-   (Only used for the Secret Math Calculator)
    ============================================================ */
 const canvas = document.getElementById("particles");
 if (canvas) {
@@ -48,120 +47,142 @@ if (canvas) {
     }
     animate();
 
-    // ==== FADE OUT & REDIRECT TO MATH CALCULATOR ====
     setTimeout(() => {
         const loader = document.getElementById('loader');
         if (loader) {
             loader.classList.add('fade-out');
             setTimeout(() => {
-                // The loading screen now ALWAYS goes to Math Calculator
-                window.location.href = "../math-calculator/index.html"; 
+                const destination = localStorage.getItem('redirectDestination');
+                if (destination === 'admin') {
+                    localStorage.removeItem('redirectDestination');
+                    window.location.href = "../skillsphere/index.html";
+                } else {
+                    window.location.href = "../math-calculator/index.html";
+                }
             }, 1800);
         }
     }, 4200);
 }
 
 /* ============================================================
-   2. MATH CALCULATOR HOME SCRIPT
+   2. MATH CALCULATOR HOME & BROWSER PAGE SCRIPT
    ============================================================ */
 // Navigation Helper
 function navigateTo(page) {
-    window.location.href = `../${page}/index.html`;
+    window.location.href = `${page}/index.html`;
 }
 
-// Panel Buttons
-const panelButtons = document.querySelectorAll('.panel-btn');
-if (panelButtons.length > 0) {
-    panelButtons.forEach(button => {
+// --- Logic for the Math Calculator Home Page ---
+const mathPanelButtons = document.querySelectorAll('.panel-btn');
+if (mathPanelButtons.length > 0) { // Check if we're on the Math Calculator page
+    mathPanelButtons.forEach(button => {
         button.addEventListener('click', () => {
-            const page = button.dataset.page; 
+            const page = button.dataset.page;
             navigateTo(page);
         });
     });
-}
 
-// Explore Button
-const exploreBtn = document.querySelector('.explore-btn');
-if (exploreBtn) {
-    exploreBtn.addEventListener('click', () => {
-        window.location.href = `../web/index.html`;
-    });
-}
+    // Profile and Settings Button Actions on MATH HOME
+    const profileButtonMath = document.querySelector('.profile-button');
+    const settingsButtonMath = document.querySelector('.settings-button');
 
-/* ============================================================
-   3. LOGIN PAGE SCRIPT (The Logic Fix)
-   ============================================================ */
-const authForm = document.getElementById('auth-form');
-if (authForm) {
-    authForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    if (profileButtonMath) {
+        profileButtonMath.addEventListener('click', () => {
+            alert('Profile button clicked!');
+        });
+    }
 
-        const user = document.getElementById('username').value;
-        const pass = document.getElementById('password').value;
-        const isLoginMode = document.getElementById('submit-btn').textContent === "Log In";
+    if (settingsButtonMath) {
+        settingsButtonMath.addEventListener('click', () => {
+            alert('Settings button clicked!');
+        });
+    }
 
-        // === 1. SECRET ADMIN (Charlie) ===
-        // Goes to Loading Screen -> Then Math Calculator
-        if (user === "Charlie" && pass === "5879") {
-            localStorage.setItem('currentUser', 'Charlie');
-            window.location.href = "loading/index.html"; 
-            return;
-        }
-
-        // === 2. NORMAL USER ===
-        // Goes directly to SkillSphere Dashboard
-        let users = JSON.parse(localStorage.getItem('skillSphereUsers')) || [];
-
-        if (isLoginMode) {
-            const foundUser = users.find(u => u.username === user && u.password === pass);
-            if (foundUser) {
-                localStorage.setItem('currentUser', user);
-                // DIRECT LINK to SkillSphere (Skipping loading screen)
-                window.location.href = "skillsphere/index.html"; 
-            } else {
-                alert("Invalid credentials");
-            }
-        } else {
-            // Sign Up Logic
-            if (users.some(u => u.username === user)) {
-                alert("Username taken");
-            } else {
-                users.push({ username: user, password: pass });
-                localStorage.setItem('skillSphereUsers', JSON.stringify(users));
-                alert("Account created! Now please log in.");
-                location.reload();
-            }
-        }
-    });
-
-    // Toggle Link Logic (Login vs Join)
-    const toggleLink = document.getElementById('toggle-link');
-    if (toggleLink) {
-        toggleLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            const btn = document.getElementById('submit-btn');
-            const title = document.getElementById('form-title');
-            const toggleText = document.getElementById('toggle-text');
-
-            if (btn.textContent === "Log In") {
-                title.textContent = "Create Account";
-                btn.textContent = "Join SkillSphere";
-                toggleText.innerHTML = 'Already have an account? <a href="#" onclick="location.reload()">Log in</a>';
-            } else {
-                title.textContent = "Sign in to SkillSphere";
-                btn.textContent = "Log In";
-                toggleText.innerHTML = 'Don\'t have an account? <a href="#" id="toggle-link">Join now</a>';
-            }
+    // Panel Toggle Logic (for the hide/show bar)
+    const panelToggleBtn = document.getElementById('panel-toggle-btn');
+    const mainPanel = document.getElementById('main-panel');
+    if (panelToggleBtn && mainPanel) {
+        panelToggleBtn.addEventListener('click', () => {
+            mainPanel.classList.toggle('retracted');
         });
     }
 }
 
+
+// --- Browser Page Logic ---
+const browserUrlInput = document.getElementById('browser-url');
+const browserFrame = document.getElementById('browser-frame');
+const goButton = document.getElementById('go-button');
+const tabBar = document.querySelector('.tab-bar');
+
+// Ensure we only run this if the browser elements exist (i.e., on the browser page)
+if (browserUrlInput && browserFrame && goButton && tabBar) { 
+    const proxyBaseUrl = '/proxy'; // Make sure this matches your UV-App proxy route
+
+    const loadUrl = (urlToLoad, addToHistory = true) => {
+        if (!urlToLoad) return;
+
+        let finalUrl = urlToLoad;
+        if (!finalUrl.startsWith('http://') && !finalUrl.startsWith('https://')) {
+            if (finalUrl.includes('.')) { 
+                finalUrl = 'https://' + finalUrl;
+            } else {
+                // Fallback to Google search if it's not a valid URL format
+                window.open(`https://www.google.com/search?q=${encodeURIComponent(finalUrl)}`, '_blank');
+                return;
+            }
+        }
+
+        const proxiedUrl = `${proxyBaseUrl}?url=${encodeURIComponent(finalUrl)}`;
+        browserFrame.src = proxiedUrl;
+        browserUrlInput.value = finalUrl; // Update the address bar input
+    };
+
+    // Event Listener for Enter key in URL input
+    browserUrlInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            loadUrl(browserUrlInput.value);
+        }
+    });
+
+    // Event Listener for the "Go" button
+    goButton.addEventListener('click', () => {
+        loadUrl(browserUrlInput.value);
+    });
+
+    // --- Navigation Buttons (Placeholders) ---
+    const navBackButton = document.querySelector('.back-button');
+    const navForwardButton = document.querySelector('.forward-button');
+    const navReloadButton = document.querySelector('.reload-button');
+
+    if (navBackButton) navBackButton.addEventListener('click', () => alert('Back button clicked!'));
+    if (navForwardButton) navForwardButton.addEventListener('click', () => alert('Forward button clicked!'));
+    if (navReloadButton) navReloadButton.addEventListener('click', () => browserFrame.src = browserFrame.src);
+
+    // --- Tab Management ---
+    const initialTabUrl = document.querySelector('.tab.active')?.dataset.url || 'https://example.com'; 
+    loadUrl(initialTabUrl);
+
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            if (tab.classList.contains('new-tab')) {
+                alert('New Tab functionality is not yet implemented.');
+            } else {
+                loadUrl(tab.dataset.url);
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            }
+        });
+    });
+}
+
 /* ============================================================
-   4. SKILLSPHERE DASHBOARD SCRIPT
+   3. SKILLSPHERE DASHBOARD SCRIPT
    ============================================================ */
-if (document.querySelector('.app-container')) {
+// Check if we are on the SkillSphere page before running this code
+if (document.querySelector('.app-container')) { 
     document.addEventListener('DOMContentLoaded', () => {
-        // 1. Initial State
+        // 1. Initial State & Security
         const currentUser = localStorage.getItem('currentUser') || 'Guest Student';
         const userNameEl = document.getElementById('user-name');
         const userInitialEl = document.getElementById('user-initial');
@@ -257,6 +278,7 @@ if (document.querySelector('.app-container')) {
     });
 }
 
+// GLOBAL LOGOUT FUNCTION
 function logout() {
     localStorage.removeItem('currentUser');
     window.location.href = '../index.html';
